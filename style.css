@@ -103,7 +103,7 @@ a:hover {
 .main-block__info-center p a {
     font-size: 26px;
 }
-@media screen and (max-width: 1140px) {
+/* @media screen and (max-width: 1140px) {
     .main-block__info--left h1 {
         font-size: 100px;
     }
@@ -134,7 +134,7 @@ a:hover {
     .main-block__left {
         width: 50%;
     }
-}
+} */
 .grid {
     position: absolute;
     z-index: 0;
@@ -158,4 +158,8 @@ a:hover {
 
 .GoldenPropertySolution {
     color: #24173d;
+}
+
+.cart-react {
+    color: rgb(0, 47, 255);
 }
