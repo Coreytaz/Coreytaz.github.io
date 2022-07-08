@@ -96,6 +96,10 @@ a:hover {
     color: rgb(0, 47, 255);
 }
 
+.ReactRepos {
+    color: #dd3543;
+}
+
 @media (max-width: 1024px) {
     .main-block {
         flex-direction: column;
