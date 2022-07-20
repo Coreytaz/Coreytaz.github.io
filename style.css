@@ -100,6 +100,10 @@ a:hover {
     color: #dd3543;
 }
 
+.BastionGroup {
+    color: red;
+}
+
 @media (max-width: 1024px) {
     .main-block {
         flex-direction: column;
