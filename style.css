@@ -104,6 +104,10 @@ a:hover {
     color: red;
 }
 
+.Elephant-um {
+    color: linear-gradient(326.12deg, #5d77ff 17.95%, #6539c1 89.78%);
+}
+
 @media (max-width: 1024px) {
     .main-block {
         flex-direction: column;
