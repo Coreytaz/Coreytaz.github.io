@@ -8,7 +8,10 @@
     <title>Bykov Stepan</title>
   </head>
   <body>
-    <div class="main-block">
+    <a href="#main" class="smooth-scroll">
+      <button id="scrollBtn" title="Наверх">↑</button>
+    </a>
+    <div class="main-block" id="main">
       <div class="main-block__bg"></div>
       <div class="main-block__info">
         <div class="main-block__info-center">
@@ -16,21 +19,993 @@
           <div>
             <p>Hello, World! I’m a frontend developer.</p>
             <p>I ❤️ <b>JavaScript</b>, <b>ReactJS</b>.</p>
-            <p>
-              <a href="https://github.com/Coreytaz">GitHub</a>,
-              <a class="pizza" href="./pizza/index.html">Pizza</a>,
-              <a class="legalide" href="./legalide/index.html">Legalide</a>,
-              <a class="GoldenPropertySolution" href="./golden/index.html"
-                >GoldenPropertySolution</a
-              >, <a class="cart-react" href="./cart-react/">Cart-react</a>,
-              <a class="ReactRepos" href="./Search-repos-react/">ReactRepos</a>,
-              <a class="BastionGroup" href="./bastion-group/">BastionGroup</a>,
-              <a class="Elephant-um" href="./elephant-um/">Elephant-um</a>,
-              <a class="pizza" href="./ReactPizza/">ReactPizza</a>.
-            </p>
+            <div class="main-block__btn">
+              <a href="#pizza" class="smooth-scroll">
+                <button class="buttonPrimary">К проектам</button>
+              </a>
+              <a href="https://github.com/Coreytaz" target="_blank">
+                <button class="buttonPrimary github">GitHub</button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="project-block pizza" id="pizza">
+      <div class="project-block__bg">
+        <img src="./assets/pizza.png" alt="pizza" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>Pizza Time</h1>
+          <div class="project-block__info-stec">
+            <p>Стек технологий</p>
+            <ul>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/html5/html5-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />HTML
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/css3/css3-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />CSS
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/javascript/javascript-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />JavaScript
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/jquery/jquery-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />JQuery
+              </li>
+            </ul>
+          </div>
+          <div class="main-block__btn">
+            <a href="./pizza/index.html">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a href="https://github.com/Coreytaz/pizza" target="_blank">
+              <button class="buttonPrimary github">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#legalide" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div class="project-block legalide" id="legalide">
+      <div class="project-block__bg">
+        <img src="./assets/GoldenPropertySolution.png" alt="legalace" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>GPS</h1>
+          <div class="project-block__info-stec">
+            <p>Стек технологий</p>
+            <ul>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/html5/html5-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />HTML
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/css3/css3-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />CSS
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/javascript/javascript-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />JavaScript
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/gulp/gulp-plain.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />Gulp
+              </li>
+            </ul>
+          </div>
+          <div class="main-block__btn">
+            <a href="./legalide/index.html">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a href="https://github.com/Coreytaz/Legalide" target="_blank">
+              <button class="buttonPrimary github">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#GoldenPropertySolution" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div
+      class="project-block GoldenPropertySolution"
+      id="GoldenPropertySolution"
+    >
+      <div class="project-block__bg">
+        <img src="./assets/legalace.png" alt="legalace" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>Legalide</h1>
+          <div class="project-block__info-stec">
+            <p>Стек технологий</p>
+            <ul>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/html5/html5-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />HTML
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/css3/css3-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />CSS
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/javascript/javascript-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />JavaScript
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/gulp/gulp-plain.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />Gulp
+              </li>
+            </ul>
+          </div>
+          <div class="main-block__btn">
+            <a href="./legalide/index.html">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a href="https://github.com/Coreytaz/Legalide" target="_blank">
+              <button class="buttonPrimary github">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#cart-react" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div class="project-block cart-react" id="cart-react">
+      <div class="project-block__bg">
+        <img src="./assets/React-cart .png" alt="React-cart " />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>React-cart</h1>
+          <div class="project-block__info-stec">
+            <p>Стек технологий</p>
+            <ul>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />React
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/css3/css3-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />CSS
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/javascript/javascript-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />JavaScript
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/mui/material-ui/4b4b2fea058c682a1f40c3d80a4ea2aeb062ed4b/docs/public/static/logo.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />MUI
+              </li>
+            </ul>
+          </div>
+          <div class="main-block__btn">
+            <a href="https://coreytaz.github.io/cart-react/">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a href="https://github.com/Coreytaz/cart-react" target="_blank">
+              <button class="buttonPrimary github">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#ReactRepos" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div class="project-block ReactRepos" id="ReactRepos">
+      <div class="project-block__bg">
+        <img src="./assets/ReactRepos.png" alt="ReactRepos" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>ReactRepos</h1>
+          <div class="project-block__info-stec">
+            <p>Стек технологий</p>
+            <ul>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />React
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/css3/css3-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />CSS
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/javascript/javascript-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />JavaScript
+              </li>
+              <li>
+                <img
+                  src="https://axios-http.com/assets/logo.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />Axios
+              </li>
+            </ul>
+          </div>
+          <div class="main-block__btn">
+            <a href="https://coreytaz.github.io/Search-repos-react/">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a
+              href="https://github.com/Coreytaz/Search-repos-react"
+              target="_blank"
+            >
+              <button class="buttonPrimary github">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#BastionGroup" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div class="project-block BastionGroup" id="BastionGroup">
+      <div class="project-block__bg">
+        <img src="./assets/bastion-group.png" alt="BastionGroup" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>BastionGroup</h1>
+          <div class="project-block__info-stec">
+            <p>Стек технологий</p>
+            <ul>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />React
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/sass/sass-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />SASS
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />TypeScript
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/redux/redux-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />Redux
+              </li>
+              <li>
+                <img
+                  src="./assets/react-router-mark-color.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />react-router-dom
+              </li>
+            </ul>
+          </div>
+          <div class="main-block__btn">
+            <a href="https://coreytaz.github.io/bastion-group/">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a href="https://github.com/Coreytaz/bastion-group" target="_blank">
+              <button class="buttonPrimary github">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#Elephant-um" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div class="project-block Elephant-um" id="Elephant-um">
+      <div class="project-block__bg">
+        <img src="./assets/Elephant-um.png" alt="Elephant-um" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>Elephant-um</h1>
+          <div class="project-block__info-stec">
+            <p>Стек технологий</p>
+            <ul>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />React
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/sass/sass-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />SASS
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />TypeScript
+              </li>
+            </ul>
+          </div>
+          <div class="main-block__btn">
+            <a href="https://coreytaz.github.io/elephant-um/">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a href="https://github.com/Coreytaz/elephant-um" target="_blank">
+              <button class="buttonPrimary github">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#pizzaReact" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div class="project-block pizzaReact" id="pizzaReact">
+      <div class="project-block__bg">
+        <img src="./assets/pizzaReact.png" alt="pizzaReact" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>REACT PIZZA</h1>
+          <div class="project-block__info-stec">
+            <p>Стек технологий</p>
+            <ul>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />React
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/sass/sass-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />SASS
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />TypeScript
+              </li>
+              <li>
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/redux/redux-original.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />Redux
+              </li>
+              <li>
+                <img
+                  src="https://axios-http.com/assets/logo.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />Axios
+              </li>
+              <li>
+                <img
+                  src="./assets/react-router-mark-color.svg"
+                  width="36"
+                  height="36"
+                  alt="Html5"
+                />react-router-dom
+              </li>
+            </ul>
+          </div>
+          <div class="main-block__btn">
+            <a href="https://coreytaz.github.io/ReactPizza/">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a href="https://github.com/Coreytaz/ReactPizza" target="_blank">
+              <button class="buttonPrimary github">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#React-Chat" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div class="project-block React-Chat" id="React-Chat">
+      <div class="project-block__bg">
+        <img src="./assets/ReactChat.png" alt="React-Chat" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>React-Chat</h1>
+          <div class="project-block__info-stec-wrap">
+            <div class="project-block__info-stec">
+              <p>Стек технологий frontend</p>
+              <ul>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />React
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/sass/sass-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />SASS
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />TypeScript
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/redux/redux-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Redux Toolkit
+                </li>
+                <li>
+                  <img
+                    src="https://axios-http.com/assets/logo.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Axios
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/socketio/socketio-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />socket.io
+                </li>
+                <li>
+                  <img
+                    src="./assets/react-query-seeklogo.com.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />React-query
+                </li>
+                <li>
+                  <img
+                    src="./assets/react-router-mark-color.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />React Router Dom
+                </li>
+              </ul>
+            </div>
+            <div class="project-block__info-stec">
+              <p>Стек технологий backend</p>
+              <ul>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nestjs/nestjs-plain.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />NestJS
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />TypeScript
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/mongodb/mongodb-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Mongodb
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/socketio/socketio-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />socket.io
+                </li>
+                <li>
+                  <img
+                    src="https://jwt.io/img/pic_logo.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />JWT
+                </li>
+                <li>Mongoose</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-block__btn">
+            <a href="https://react-web-chat.vercel.app">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a
+              href="https://github.com/Coreytaz/react-web-chat"
+              target="_blank"
+            >
+              <button class="buttonPrimary github">GitHub frontend</button>
+            </a>
+            <a
+              href="https://github.com/Coreytaz/React_Chat_Back"
+              target="_blank"
+            >
+              <button class="buttonPrimary github">GitHub backend</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#SpaceXShips" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div class="project-block SpaceXShips" id="SpaceXShips">
+      <div class="project-block__bg">
+        <img src="./assets/SpaceX Ships.png" alt="SpaceXShips" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>SpaceX Ships</h1>
+          <div class="project-block__info-stec-wrap">
+            <div class="project-block__info-stec">
+              <p>Стек технологий</p>
+              <ul>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />React
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/sass/sass-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />SASS
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />TypeScript
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/redux/redux-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Redux Toolkit & RTK query
+                </li>
+                <li>
+                  <img
+                    src="https://axios-http.com/assets/logo.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Axios
+                </li>
+                <li>
+                  <img
+                    src="./assets/react-router-mark-color.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />React Router Dom
+                </li>
+                <li>
+                  <img
+                    src="https://github.com/feature-sliced/documentation/blob/master/static/img/brand/logo-square.png?raw=true"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Feature-Sliced Design
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-block__btn">
+            <a href="https://graff-interactive-test.vercel.app">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a
+              href="https://github.com/Coreytaz/GraffInteractive-test"
+              target="_blank"
+            >
+              <button class="buttonPrimary github">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#autoRepairConsole" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div class="project-block autoRepairConsole" id="autoRepairConsole">
+      <div class="project-block__bg">
+        <img src="./assets/autoRepairConsole.png" alt="autoRepairConsole" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>Автосервис</h1>
+          <div class="project-block__info-stec-wrap">
+            <div class="project-block__info-stec">
+              <p>Стек технологий</p>
+              <ul>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />React
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/sass/sass-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />SASS
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Tailwindcss
+                </li>
+                <li>
+                  <img
+                    src="https://avatars.githubusercontent.com/u/75042455?s=200&v=4"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Radix UI
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />TypeScript
+                </li>
+                <li>Zustand</li>
+                <li>
+                  <img
+                    src="https://axios-http.com/assets/logo.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Axios
+                </li>
+                <li>
+                  <img
+                    src="./assets/react-router-mark-color.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />React Router Dom
+                </li>
+                <li>
+                  <img
+                    src="https://github.com/feature-sliced/documentation/blob/master/static/img/brand/logo-square.png?raw=true"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Feature-Sliced Design
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-block__btn">
+            <a href="https://graff-interactive-test.vercel.app">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a
+              href="https://github.com/Coreytaz/GraffInteractive-test"
+              target="_blank"
+            >
+              <button class="buttonPrimary github">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#AnimBook" class="smooth-scroll">
+        <button class="sroll-down">↓</button>
+      </a>
+    </div>
+    <div class="project-block AnimBook" id="AnimBook">
+      <div class="project-block__bg">
+        <img src="./assets/AnimBook.png" alt="AnimBook" />
+      </div>
+      <div class="project-block__info">
+        <div class="project-block__info-center">
+          <h1>AnimBook</h1>
+          <div class="project-block__info-stec-wrap">
+            <div class="project-block__info-stec">
+              <p>Стек технологий frontend</p>
+              <ul>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nextjs/nextjs-line.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />NextJS
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/sass/sass-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />SASS
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/nextui-org/nextui/main/apps/docs/public/isotipo.png"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Next UI
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />TypeScript
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/redux/redux-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Redux Toolkit & RTK query
+                </li>
+                <li>
+                  <img
+                    src="https://axios-http.com/assets/logo.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Axios
+                </li>
+                <li>
+                  <img
+                    src="https://next-auth.js.org/img/logo/logo-xs.png"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />NextAuth.js
+                </li>
+                <li>
+                  <img
+                    src="https://github.com/feature-sliced/documentation/blob/master/static/img/brand/logo-square.png?raw=true"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Feature-Sliced Design
+                </li>
+              </ul>
+            </div>
+            <div class="project-block__info-stec">
+              <p>Стек технологий backend</p>
+              <ul>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nestjs/nestjs-plain.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />NestJS
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />TypeScript
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/postgresql/postgresql-original.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />Postgresql
+                </li>
+                <li>
+                  <img
+                    src="https://jwt.io/img/pic_logo.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />JWT
+                </li>
+                <li>
+                  <img
+                    src="https://seeklogo.com/images/T/typeorm-logo-F243B34DEE-seeklogo.com.png"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />TypeORM
+                </li>
+                <li>
+                  <img
+                    src="./assets/cloudinary-seeklogo.com.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />cloudinary
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/gist/PonomareVlad/55c8708f11702b4df629ae61129a9895/raw/1657350724dab66f2ad68ea034c480a2df2a1dfd/YooMoney.svg"
+                    width="36"
+                    height="36"
+                    alt="Html5"
+                  />YooMoney
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-block__btn">
+            <a href="https://anim-book.vercel.app">
+              <button class="buttonPrimary">Перейти к проекту</button>
+            </a>
+            <a href="https://github.com/Coreytaz/AnimBook" target="_blank">
+              <button class="buttonPrimary github">GitHub frontend</button>
+            </a>
+            <a
+              href="https://github.com/Coreytaz/AnimBook-server"
+              target="_blank"
+            >
+              <button class="buttonPrimary github">GitHub backend</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#main" class="smooth-scroll">
+        <button class="sroll-down">↑</button>
+      </a>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
