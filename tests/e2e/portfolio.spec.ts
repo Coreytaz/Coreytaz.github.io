@@ -6,6 +6,91 @@ import path from "node:path";
 const content = JSON.parse(readFileSync("content/portfolio.json", "utf8"));
 const slugs = ["animbook", "react-chat", "spacex-ships"];
 
+async function settleMotion(page: import("@playwright/test").Page) {
+  // Contrast is measured after real entrance/route animations finish, without disabling them.
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          document
+            .getAnimations()
+            .filter(
+              (animation) =>
+                animation.playState === "running" &&
+                animation.effect?.getTiming().iterations !== Infinity,
+            ).length,
+      ),
+    )
+    .toBe(0);
+}
+
+test("header controls all motion and preserves the preference across reloads and languages", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/");
+  const html = page.locator("html");
+  const track = page.locator(".stack-track");
+  await expect(html).toHaveAttribute("data-motion", "on");
+  await expect(page.locator(".theme-button + .motion-button")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(page.locator(".stack-strip button")).toHaveCount(0);
+  await page.locator(".stack-strip").hover();
+  const transform = () =>
+    track.evaluate((element) => getComputedStyle(element).transform);
+  const start = await transform();
+  await expect.poll(transform).not.toBe(start);
+  await page.getByRole("button", { name: "Выключить анимации" }).click();
+  await expect(html).toHaveAttribute("data-motion", "off");
+  await expect(track).toHaveCSS("animation-name", "none");
+  await expect(page.locator(".hero-visual")).toHaveCSS(
+    "animation-name",
+    "none",
+  );
+  await expect(page.locator(".browser-frame").first()).toHaveCSS(
+    "transition-duration",
+    "0s",
+  );
+  await expect(html).toHaveCSS("scroll-behavior", "auto");
+  await page.reload();
+  await expect(html).toHaveAttribute("data-motion", "off");
+  expect(
+    await page.evaluate(() => localStorage.getItem("portfolio-motion")),
+  ).toBe("off");
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.getByRole("button", { name: "Включить анимации" }).click();
+  await expect(html).toHaveAttribute("data-motion", "on");
+  await expect(track).toHaveCSS("animation-name", "stack-scroll");
+  const resumed = await transform();
+  await expect.poll(transform).not.toBe(resumed);
+  await page.goto("/en/projects/animbook/");
+  await expect(html).toHaveAttribute("data-motion", "on");
+  await page.getByRole("button", { name: "Disable animations" }).click();
+  await page.goto("/");
+  await expect(html).toHaveAttribute("data-motion", "off");
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+});
+
+test("motion is enabled by default even when the system requests reduced motion", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/");
+  await expect(page.locator("html")).toHaveAttribute("data-motion", "on");
+  await expect(page.locator(".stack-track")).toHaveCSS(
+    "animation-name",
+    "stack-scroll",
+  );
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await expect(page.locator("html")).toHaveAttribute("data-motion", "on");
+});
+
 test("both homepages contain real content, localized SEO, and accessible navigation", async ({
   page,
 }) => {
@@ -35,6 +120,7 @@ test("both homepages contain real content, localized SEO, and accessible navigat
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBe(true);
+    await settleMotion(page);
     expect(
       (
         await new AxeBuilder({ page })
@@ -69,6 +155,7 @@ test("case pages survive direct navigation, refresh, and locale switching", asyn
   }
   await page.locator(".language-button").click();
   await expect(page).toHaveURL(/\/projects\/spacex-ships\/$/);
+  await settleMotion(page);
   expect(
     (
       await new AxeBuilder({ page })
@@ -84,6 +171,7 @@ test("theme persists and print mode keeps useful content", async ({ page }) => {
   await expect(page.locator("html")).toHaveClass(/dark/);
   await page.reload();
   await expect(page.locator("html")).toHaveClass(/dark/);
+  await settleMotion(page);
   expect(
     (
       await new AxeBuilder({ page })
@@ -119,7 +207,10 @@ test("keyboard skip link and mobile menu work", async ({ page }, testInfo) => {
 });
 
 test("content is readable without JavaScript", async ({ browser }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    baseURL: test.info().project.use.baseURL,
+  });
   const page = await context.newPage();
   for (const url of [
     "/",
@@ -127,7 +218,7 @@ test("content is readable without JavaScript", async ({ browser }) => {
     "/projects/animbook/",
     "/en/projects/react-chat/",
   ]) {
-    await page.goto(`http://127.0.0.1:3000${url}`);
+    await page.goto(url);
     await expect(page.locator("h1")).toBeVisible();
     await expect(page.locator("main")).toContainText(/React|AnimBook/);
   }

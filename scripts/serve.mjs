@@ -39,8 +39,12 @@ const server = createServer(async (request, response) => {
         file = path.join(file, "index.html");
       }
       if (!(await stat(file)).isFile()) throw new Error("Not a file");
-    } catch {
-      file = path.join(root, "404.html");
+    } catch (error) {
+      if (!error || !["ENOENT", "ENOTDIR"].includes(error.code)) throw error;
+      file = path.join(
+        root,
+        pathname.startsWith("/en/") ? "en/404.html" : "404.html",
+      );
       statusCode = 404;
     }
     let body = await readFile(file);
@@ -61,8 +65,22 @@ const server = createServer(async (request, response) => {
     headers["Content-Length"] = String(body.length);
     response.writeHead(statusCode, headers);
     response.end(request.method === "HEAD" ? undefined : body);
-  } catch {
-    response.writeHead(400).end("Bad request");
+  } catch (error) {
+    if (error instanceof URIError || error instanceof TypeError) {
+      response.writeHead(400).end("Bad request");
+      return;
+    }
+    try {
+      const body = await readFile(path.join(root, "500.html"));
+      response.writeHead(500, {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-store",
+        "X-Robots-Tag": "noindex",
+      });
+      response.end(request.method === "HEAD" ? undefined : body);
+    } catch {
+      response.writeHead(500).end("Internal server error");
+    }
   }
 });
 server.listen(port, "127.0.0.1", () =>

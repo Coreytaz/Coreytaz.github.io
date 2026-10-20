@@ -73,8 +73,14 @@ export const copyKeys = [
   "caseLabel",
   "notFoundTitle",
   "notFoundText",
+  "serverErrorTitle",
+  "serverErrorText",
+  "retry",
   "experienceTitle",
   "allProjects",
+  "stripTitle",
+  "motionEnable",
+  "motionDisable",
 ] as const;
 
 export const projectSchema = z
@@ -138,6 +144,7 @@ export const portfolioSchema = z
         en: z.record(z.enum(copyKeys), text),
       })
       .strict(),
+    additionalTechnologies: z.array(text).default([]),
     skills: z.array(
       z
         .object({

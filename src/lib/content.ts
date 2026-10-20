@@ -13,8 +13,15 @@ if (!parsed.success)
     `Invalid portfolio.json:\n${parsed.error.issues.map((issue) => `${issue.path.join(".")}: ${issue.message}`).join("\n")}`,
   );
 
-// Read only on the build/server side. The complete JSON, including drafts, is never imported by a client component.
+// Read only on the build/server side, including additionalTechnologies for the strip.
+// The complete JSON, including drafts, is never imported by a client component.
 export const portfolio = parsed.data;
+export const stripTechnologies = [
+  ...new Set([
+    ...portfolio.skills.flatMap((skill) => skill.technologies),
+    ...portfolio.additionalTechnologies,
+  ]),
+];
 export const buildYear = new Date().getUTCFullYear();
 for (const project of portfolio.projects.filter(
   (item) => item.status === "published",

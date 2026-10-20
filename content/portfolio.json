@@ -30,9 +30,9 @@
       "en": "I’m interested in how individual components become a complete product. My projects explore state management, authentication, external data, and real-time events. I also use NestJS and databases, which helps me see the application as a whole."
     },
     "github": "https://github.com/Coreytaz",
-    "email": null,
-    "telegram": null,
-    "resume": null
+    "email": "coreytaz321@gmail.com",
+    "telegram": "https://t.me/gamy1337",
+    "resume": "https://ekaterinburg.hh.ru/resume/424db059ff0af5c4320039ed1f764855764e4a"
   },
   "copy": {
     "ru": {
@@ -69,7 +69,7 @@
       "relatedProjects": "Посмотреть в проекте",
       "contactEyebrow": "03 / ДАВАЙТЕ ЗНАКОМИТЬСЯ",
       "contactTitle": "Хорошие продукты\nначинаются с диалога.",
-      "contactIntro": "Исходный код, проекты и профиль — на GitHub. Буду рад обсудить frontend и новые задачи.",
+      "contactIntro": "Буду рад обсудить frontend и новые задачи. Напишите на почту или в Telegram, посмотрите резюме и проекты на GitHub.",
       "contactAction": "Перейти в GitHub",
       "email": "Написать на почту",
       "telegram": "Telegram",
@@ -87,8 +87,14 @@
       "caseLabel": "РАЗБОР ПРОЕКТА",
       "notFoundTitle": "Кажется, мы свернули не туда.",
       "notFoundText": "Такой страницы нет. На главной есть проекты, которые стоит посмотреть.",
+      "serverErrorTitle": "Что-то пошло не по плану.",
+      "serverErrorText": "Не удалось открыть страницу. Попробуйте снова или вернитесь на главную — проекты никуда не делись.",
+      "retry": "Попробовать снова",
       "experienceTitle": "Опыт работы",
-      "allProjects": "Другие проекты"
+      "allProjects": "Другие проекты",
+      "stripTitle": "Технологии",
+      "motionEnable": "Включить анимации",
+      "motionDisable": "Выключить анимации"
     },
     "en": {
       "skip": "Skip to content",
@@ -124,7 +130,7 @@
       "relatedProjects": "See it in a project",
       "contactEyebrow": "03 / LET’S CONNECT",
       "contactTitle": "Good products start\nwith a conversation.",
-      "contactIntro": "Explore my source code, projects, and profile on GitHub. Happy to talk frontend and new challenges.",
+      "contactIntro": "Happy to talk frontend and new challenges. Reach out by email or Telegram, browse my résumé, and explore my projects on GitHub.",
       "contactAction": "Find me on GitHub",
       "email": "Send an email",
       "telegram": "Telegram",
@@ -142,8 +148,14 @@
       "caseLabel": "PROJECT NOTES",
       "notFoundTitle": "A little off the beaten path.",
       "notFoundText": "This page doesn’t exist. There are projects worth exploring on the home page.",
+      "serverErrorTitle": "Something went off script.",
+      "serverErrorText": "The page couldn’t load. Try again or head back home — the projects are still there.",
+      "retry": "Try again",
       "experienceTitle": "Experience",
-      "allProjects": "More projects"
+      "allProjects": "More projects",
+      "stripTitle": "Technologies",
+      "motionEnable": "Enable animations",
+      "motionDisable": "Disable animations"
     }
   },
   "skills": [
@@ -782,5 +794,14 @@
       ],
       "imageSource": "assets/AnimBook.png"
     }
+  ],
+  "additionalTechnologies": [
+    "MobX",
+    "Zustand",
+    "React Router",
+    "React Hook Form",
+    "shadcn/ui",
+    "Base UI",
+    "Radix UI"
   ]
 }

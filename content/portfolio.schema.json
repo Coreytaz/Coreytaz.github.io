@@ -245,8 +245,14 @@
               "caseLabel",
               "notFoundTitle",
               "notFoundText",
+              "serverErrorTitle",
+              "serverErrorText",
+              "retry",
               "experienceTitle",
-              "allProjects"
+              "allProjects",
+              "stripTitle",
+              "motionEnable",
+              "motionDisable"
             ]
           },
           "additionalProperties": {
@@ -305,8 +311,14 @@
             "caseLabel",
             "notFoundTitle",
             "notFoundText",
+            "serverErrorTitle",
+            "serverErrorText",
+            "retry",
             "experienceTitle",
-            "allProjects"
+            "allProjects",
+            "stripTitle",
+            "motionEnable",
+            "motionDisable"
           ]
         },
         "en": {
@@ -365,8 +377,14 @@
               "caseLabel",
               "notFoundTitle",
               "notFoundText",
+              "serverErrorTitle",
+              "serverErrorText",
+              "retry",
               "experienceTitle",
-              "allProjects"
+              "allProjects",
+              "stripTitle",
+              "motionEnable",
+              "motionDisable"
             ]
           },
           "additionalProperties": {
@@ -425,8 +443,14 @@
             "caseLabel",
             "notFoundTitle",
             "notFoundText",
+            "serverErrorTitle",
+            "serverErrorText",
+            "retry",
             "experienceTitle",
-            "allProjects"
+            "allProjects",
+            "stripTitle",
+            "motionEnable",
+            "motionDisable"
           ]
         }
       },
@@ -435,6 +459,14 @@
         "en"
       ],
       "additionalProperties": false
+    },
+    "additionalTechnologies": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "skills": {
       "type": "array",
@@ -814,6 +846,7 @@
     "site",
     "profile",
     "copy",
+    "additionalTechnologies",
     "skills",
     "experience",
     "projects"

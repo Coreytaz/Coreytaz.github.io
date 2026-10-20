@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ArrowUp } from "lucide-react";
 import { Navigation } from "@/components/navigation";
-import { PrintButton } from "@/components/print-button";
 import { portfolio, homePath, projectPath, buildYear } from "@/lib/content";
 import type { Locale } from "@/lib/content-schema";
 
@@ -39,10 +38,12 @@ export function SiteShell({
           theme: copy.theme,
           language: copy.language,
           home: copy.home,
+          motionEnable: copy.motionEnable,
+          motionDisable: copy.motionDisable,
         }}
       />
       {children}
-      <footer className="site-footer container">
+      <footer className="site-footer container" data-reveal>
         <div className="footer-main">
           <Link className="footer-brand" href={homePath(locale)}>
             {portfolio.profile.name[locale]}
@@ -61,7 +62,6 @@ export function SiteShell({
           <span>
             © {buildYear} {portfolio.profile.name[locale]}
           </span>
-          <PrintButton label={copy.print} />
           <a href="#top">
             {copy.backTop}
             <ArrowUp size={14} aria-hidden="true" />

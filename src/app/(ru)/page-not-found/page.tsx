@@ -1,9 +1,5 @@
-import type { Metadata } from "next";
 import { NotFoundPage } from "@/components/not-found-page";
+import { errorMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "404 — Stepan Bykov",
-  robots: { index: false, follow: true },
-  alternates: { canonical: null, languages: {} },
-};
+export const metadata = errorMetadata("ru", 404);
 export default NotFoundPage;

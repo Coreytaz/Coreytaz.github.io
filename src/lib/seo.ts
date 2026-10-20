@@ -8,6 +8,14 @@ import {
 } from "@/lib/content";
 import type { Locale, Project } from "@/lib/content-schema";
 
+export function errorMetadata(locale: Locale, status: 404 | 500): Metadata {
+  return {
+    title: `${status} — ${portfolio.profile.name[locale]}`,
+    robots: { index: false, follow: true },
+    alternates: { canonical: null, languages: {} },
+  };
+}
+
 export function pageMetadata(locale: Locale, project?: Project): Metadata {
   const pathname = project
     ? projectPath(locale, project.slug)

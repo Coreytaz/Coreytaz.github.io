@@ -1,9 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
+import { ArrowUpRight, Menu, Moon, Sun, X, Play, Pause } from "lucide-react";
+import PillNav from "@/components/react-bits/PillNav";
+import "@/components/react-bits/PillNav.css";
+import { useMotion } from "@/components/motion-provider";
+import { transitionLanguage } from "@/lib/language-transition";
+import { transitionTheme } from "@/lib/theme-transition";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -23,6 +30,8 @@ type Labels = {
   theme: string;
   language: string;
   home: string;
+  motionEnable: string;
+  motionDisable: string;
 };
 
 export function Navigation({
@@ -41,7 +50,15 @@ export function Navigation({
   labels: Labels;
 }) {
   const [open, setOpen] = useState(false);
+  const pendingNavigation = useRef<string | null>(null);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname.replace(/\/$/, "") === homeHref.replace(/\/$/, "");
+  // Hash-only navigation belongs to the browser: a React transition snapshots
+  // the page and turns its smooth scroll into a visible jump.
+  const SectionLink = isHome ? "a" : Link;
   const { resolvedTheme, setTheme } = useTheme();
+  const motion = useMotion();
   const links = [
     { href: `${homeHref}#work`, label: labels.work },
     { href: `${homeHref}#about`, label: labels.about },
@@ -64,42 +81,102 @@ export function Navigation({
             <span>Frontend developer</span>
           </span>
         </Link>
-        <nav
-          aria-label={
-            locale === "ru" ? "Основная навигация" : "Main navigation"
-          }
-          className="desktop-nav"
-        >
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}>
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <PillNav
+          items={links}
+          linkComponent={SectionLink}
+          className="desktop-nav portfolio-pill-nav"
+          ariaLabel={locale === "ru" ? "Основная навигация" : "Main navigation"}
+          // Keep the SSR palette deterministic; live colors come from CSS tokens.
+          theme="light"
+          collapse="never"
+          intro={false}
+          size="sm"
+          itemStyle="plain"
+          surface="solid"
+          hoverEffect="fill"
+          indicator="none"
+          activeHref=""
+          barColor="var(--muted)"
+          textColor="var(--foreground)"
+          highlightColor="var(--primary)"
+          highlightTextColor="var(--primary-foreground)"
+        />
         <div className="header-controls">
-          <Link
-            href={alternateHref}
-            className="language-button"
-            hrefLang={locale === "ru" ? "en" : "ru"}
-            aria-label={labels.language}
-          >
-            {locale === "ru" ? "EN" : "RU"}
-            <ArrowUpRight size={12} aria-hidden="true" />
-          </Link>
-          <span className="control-divider" aria-hidden="true" />
-          <Button
-            variant="ghost"
-            size="icon"
-            className="theme-button"
-            onClick={() =>
-              setTheme(resolvedTheme === "dark" ? "light" : "dark")
-            }
-            aria-label={labels.theme}
-            title={labels.theme}
-          >
-            <Moon className="theme-moon" aria-hidden="true" />
-            <Sun className="theme-sun" aria-hidden="true" />
-          </Button>
+          <div className="header-tools">
+            <Link
+              href={alternateHref}
+              className="language-button"
+              hrefLang={locale === "ru" ? "en" : "ru"}
+              aria-label={labels.language}
+              title={labels.language}
+              onClick={(event) => {
+                if (
+                  event.button !== 0 ||
+                  event.metaKey ||
+                  event.ctrlKey ||
+                  event.shiftKey ||
+                  event.altKey
+                )
+                  return;
+                event.preventDefault();
+                transitionLanguage(
+                  () => router.push(alternateHref, { scroll: false }),
+                  motion.enabled,
+                );
+              }}
+            >
+              {locale === "ru" ? "EN" : "RU"}
+            </Link>
+            <span className="control-divider" aria-hidden="true" />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="theme-button"
+              onClick={(event) => {
+                const next = resolvedTheme === "dark" ? "light" : "dark";
+                transitionTheme(
+                  event.currentTarget,
+                  () => {
+                    flushSync(() => setTheme(next));
+                    document.documentElement.classList.toggle(
+                      "dark",
+                      next === "dark",
+                    );
+                    document.documentElement.classList.toggle(
+                      "light",
+                      next === "light",
+                    );
+                    document.documentElement.style.colorScheme = next;
+                  },
+                  motion.enabled,
+                );
+              }}
+              aria-label={labels.theme}
+              title={labels.theme}
+            >
+              <Moon className="theme-moon" aria-hidden="true" />
+              <Sun className="theme-sun" aria-hidden="true" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="motion-button"
+              onClick={motion.toggle}
+              aria-pressed={motion.enabled}
+              aria-label={
+                motion.enabled ? labels.motionDisable : labels.motionEnable
+              }
+              title={
+                motion.enabled ? labels.motionDisable : labels.motionEnable
+              }
+            >
+              {motion.enabled ? (
+                <Pause aria-hidden="true" />
+              ) : (
+                <Play aria-hidden="true" />
+              )}
+            </Button>
+          </div>
           <a
             className="header-github"
             href={github}
@@ -108,7 +185,20 @@ export function Navigation({
           >
             GitHub <ArrowUpRight size={14} aria-hidden="true" />
           </a>
-          <Sheet open={open} onOpenChange={setOpen}>
+          <Sheet
+            open={open}
+            onOpenChange={setOpen}
+            onOpenChangeComplete={(isOpen) => {
+              if (isOpen || !pendingNavigation.current) return;
+              const href = pendingNavigation.current;
+              pendingNavigation.current = null;
+              // Let the dialog release its scroll lock and restore focus first.
+              requestAnimationFrame(() => {
+                if (isHome) location.assign(href);
+                else router.push(href);
+              });
+            }}
+          >
             <SheetTrigger
               render={
                 <Button
@@ -138,15 +228,27 @@ export function Navigation({
               </SheetClose>
               <nav aria-label={labels.menu} className="sheet-nav">
                 {links.map((link, index) => (
-                  <Link
+                  <SectionLink
                     key={link.href}
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(event) => {
+                      if (
+                        event.button !== 0 ||
+                        event.metaKey ||
+                        event.ctrlKey ||
+                        event.shiftKey ||
+                        event.altKey
+                      )
+                        return;
+                      event.preventDefault();
+                      pendingNavigation.current = link.href;
+                      setOpen(false);
+                    }}
                   >
                     <span>0{index + 1}</span>
                     {link.label}
                     <ArrowUpRight aria-hidden="true" />
-                  </Link>
+                  </SectionLink>
                 ))}
               </nav>
               <a

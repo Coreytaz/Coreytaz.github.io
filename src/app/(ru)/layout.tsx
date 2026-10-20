@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
-import { RootDocument } from "@/components/root-document";
+import { LocaleBoundary } from "@/components/locale-boundary";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata("ru");
 export default function RussianLayout({ children }: { children: ReactNode }) {
-  return <RootDocument locale="ru">{children}</RootDocument>;
+  return <LocaleBoundary locale="ru">{children}</LocaleBoundary>;
 }
