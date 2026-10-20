@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+reports/
+test-results/
+playwright-report/
+assets/
+public/
+package-lock.json
+content/portfolio.schema.json
+next-env.d.ts

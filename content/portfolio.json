@@ -1,0 +1,786 @@
+{
+  "$schema": "./portfolio.schema.json",
+  "version": 1,
+  "site": {
+    "baseUrl": "https://coreytaz.github.io",
+    "title": {
+      "ru": "Степан Быков — Frontend React-разработчик",
+      "en": "Stepan Bykov — Frontend React Developer"
+    },
+    "description": {
+      "ru": "Портфолио Степана Быкова: React, TypeScript и Next.js. Проекты, технические решения, живые демо и исходный код.",
+      "en": "Stepan Bykov’s frontend portfolio: React, TypeScript, and Next.js. Explore projects, technical decisions, live demos, and source code."
+    }
+  },
+  "profile": {
+    "name": {
+      "ru": "Степан Быков",
+      "en": "Stepan Bykov"
+    },
+    "role": {
+      "ru": "Frontend React-разработчик",
+      "en": "Frontend React Developer"
+    },
+    "intro": {
+      "ru": "Я Степан Быков, frontend-разработчик. Работаю с React и TypeScript: от интерфейсов до приложений с API и real-time взаимодействием.",
+      "en": "I’m Stepan Bykov, a frontend developer working with React and TypeScript — from interfaces to applications with APIs and real-time interactions."
+    },
+    "about": {
+      "ru": "Мне интересно, как отдельные компоненты складываются в целый продукт. В моих проектах есть работа с состоянием, авторизацией, внешними данными и событиями в реальном времени. Помимо frontend, я использую NestJS и базы данных — это помогает видеть приложение целиком.",
+      "en": "I’m interested in how individual components become a complete product. My projects explore state management, authentication, external data, and real-time events. I also use NestJS and databases, which helps me see the application as a whole."
+    },
+    "github": "https://github.com/Coreytaz",
+    "email": null,
+    "telegram": null,
+    "resume": null
+  },
+  "copy": {
+    "ru": {
+      "skip": "Перейти к содержимому",
+      "navWork": "Проекты",
+      "navAbout": "Обо мне",
+      "navContact": "Контакты",
+      "navMenu": "Открыть меню",
+      "navClose": "Закрыть меню",
+      "theme": "Переключить тему",
+      "language": "Switch to English",
+      "home": "На главную",
+      "heroEyebrow": "FRONTEND DEVELOPER / REACT & TYPESCRIPT",
+      "heroLine1": "Логика внутри.",
+      "heroLine2": "Простота",
+      "heroLine3": "снаружи.",
+      "viewWork": "Смотреть проекты",
+      "github": "GitHub",
+      "scroll": "Листайте — дальше интереснее",
+      "indexLabel": "ПОРТФОЛИО",
+      "workEyebrow": "01 / ИЗБРАННЫЕ РАБОТЫ",
+      "workTitle": "От идеи до интерфейса.",
+      "workIntro": "Три проекта. Разные задачи. Один подход — внимание к тому, как всё работает.",
+      "caseStudy": "Разбор проекта",
+      "liveDemo": "Открыть демо",
+      "source": "Исходный код",
+      "backend": "Серверная часть",
+      "projectCount": "проекта в фокусе",
+      "aboutEyebrow": "02 / ЗА ИНТЕРФЕЙСОМ",
+      "aboutTitle": "Код — это только начало.",
+      "aboutNote": "React, TypeScript и интерес к тому, что под капотом.",
+      "skillsTitle": "Инструменты в контексте.",
+      "skillsIntro": "Технологии, которые можно увидеть в моих проектах.",
+      "relatedProjects": "Посмотреть в проекте",
+      "contactEyebrow": "03 / ДАВАЙТЕ ЗНАКОМИТЬСЯ",
+      "contactTitle": "Хорошие продукты\nначинаются с диалога.",
+      "contactIntro": "Исходный код, проекты и профиль — на GitHub. Буду рад обсудить frontend и новые задачи.",
+      "contactAction": "Перейти в GitHub",
+      "email": "Написать на почту",
+      "telegram": "Telegram",
+      "resume": "Открыть резюме",
+      "footerNote": "Сделано с React, TypeScript и вниманием к деталям.",
+      "backTop": "Наверх",
+      "print": "Версия для печати",
+      "backWork": "Все проекты",
+      "overview": "О проекте",
+      "features": "Что внутри",
+      "decisions": "Технические решения",
+      "stack": "Стек проекта",
+      "links": "Ссылки",
+      "nextProject": "Следующий проект",
+      "caseLabel": "РАЗБОР ПРОЕКТА",
+      "notFoundTitle": "Кажется, мы свернули не туда.",
+      "notFoundText": "Такой страницы нет. На главной есть проекты, которые стоит посмотреть.",
+      "experienceTitle": "Опыт работы",
+      "allProjects": "Другие проекты"
+    },
+    "en": {
+      "skip": "Skip to content",
+      "navWork": "Work",
+      "navAbout": "About",
+      "navContact": "Contact",
+      "navMenu": "Open menu",
+      "navClose": "Close menu",
+      "theme": "Toggle theme",
+      "language": "Переключить на русский",
+      "home": "Back to home",
+      "heroEyebrow": "FRONTEND DEVELOPER / REACT & TYPESCRIPT",
+      "heroLine1": "Logic underneath.",
+      "heroLine2": "Clarity on",
+      "heroLine3": "the surface.",
+      "viewWork": "Explore my work",
+      "github": "GitHub",
+      "scroll": "Scroll to explore",
+      "indexLabel": "PORTFOLIO",
+      "workEyebrow": "01 / SELECTED WORK",
+      "workTitle": "From idea to interface.",
+      "workIntro": "Three projects. Different challenges. A shared focus on how things work.",
+      "caseStudy": "Explore the project",
+      "liveDemo": "View live demo",
+      "source": "Source code",
+      "backend": "Backend",
+      "projectCount": "projects in focus",
+      "aboutEyebrow": "02 / BEHIND THE INTERFACE",
+      "aboutTitle": "Code is just the beginning.",
+      "aboutNote": "React, TypeScript, and curiosity about what happens underneath.",
+      "skillsTitle": "Tools in context.",
+      "skillsIntro": "Technologies you can explore in my projects.",
+      "relatedProjects": "See it in a project",
+      "contactEyebrow": "03 / LET’S CONNECT",
+      "contactTitle": "Good products start\nwith a conversation.",
+      "contactIntro": "Explore my source code, projects, and profile on GitHub. Happy to talk frontend and new challenges.",
+      "contactAction": "Find me on GitHub",
+      "email": "Send an email",
+      "telegram": "Telegram",
+      "resume": "View résumé",
+      "footerNote": "Built with React, TypeScript, and attention to detail.",
+      "backTop": "Back to top",
+      "print": "Print this page",
+      "backWork": "All projects",
+      "overview": "Overview",
+      "features": "Inside the project",
+      "decisions": "Technical decisions",
+      "stack": "Project stack",
+      "links": "Links",
+      "nextProject": "Next project",
+      "caseLabel": "PROJECT NOTES",
+      "notFoundTitle": "A little off the beaten path.",
+      "notFoundText": "This page doesn’t exist. There are projects worth exploring on the home page.",
+      "experienceTitle": "Experience",
+      "allProjects": "More projects"
+    }
+  },
+  "skills": [
+    {
+      "id": "interface",
+      "title": {
+        "ru": "Интерфейсы",
+        "en": "Interfaces"
+      },
+      "description": {
+        "ru": "Компоненты, маршрутизация и типизированная логика приложения.",
+        "en": "Components, routing, and typed application logic."
+      },
+      "technologies": ["React", "Next.js", "TypeScript", "Sass"],
+      "projects": ["animbook", "react-chat"]
+    },
+    {
+      "id": "data",
+      "title": {
+        "ru": "Данные и состояние",
+        "en": "Data & state"
+      },
+      "description": {
+        "ru": "Запросы к API, клиентское состояние и обмен событиями.",
+        "en": "API requests, client state, and event-driven communication."
+      },
+      "technologies": [
+        "Redux Toolkit",
+        "RTK Query",
+        "TanStack Query",
+        "Socket.IO"
+      ],
+      "projects": ["spacex-ships", "react-chat"]
+    },
+    {
+      "id": "beyond",
+      "title": {
+        "ru": "За пределами frontend",
+        "en": "Beyond the frontend"
+      },
+      "description": {
+        "ru": "Серверная часть, хранение данных и авторизация.",
+        "en": "Backends, data storage, and authentication."
+      },
+      "technologies": ["NestJS", "PostgreSQL", "MongoDB", "JWT"],
+      "projects": ["animbook", "react-chat"]
+    }
+  ],
+  "experience": [],
+  "projects": [
+    {
+      "slug": "pizza-time",
+      "title": "Pizza Time",
+      "status": "draft",
+      "order": 10,
+      "featured": false,
+      "category": {
+        "ru": "Веб-интерфейс",
+        "en": "Web interface"
+      },
+      "summary": {
+        "ru": "Проект из предыдущей версии портфолио.",
+        "en": "A project from the previous portfolio."
+      },
+      "overview": {
+        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
+        "en": "Archived until its external demo and description are updated."
+      },
+      "features": {
+        "ru": [],
+        "en": []
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "jQuery"],
+      "image": "/images/projects/pizza-time.webp",
+      "imageAlt": {
+        "ru": "Интерфейс Pizza Time",
+        "en": "Pizza Time interface"
+      },
+      "accent": "blue",
+      "demoUrl": null,
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Coreytaz/pizza"
+        }
+      ],
+      "imageSource": "assets/pizza.png"
+    },
+    {
+      "slug": "golden-property",
+      "title": "Golden Property Solution",
+      "status": "draft",
+      "order": 11,
+      "featured": false,
+      "category": {
+        "ru": "Веб-интерфейс",
+        "en": "Web interface"
+      },
+      "summary": {
+        "ru": "Проект из предыдущей версии портфолио.",
+        "en": "A project from the previous portfolio."
+      },
+      "overview": {
+        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
+        "en": "Archived until its external demo and description are updated."
+      },
+      "features": {
+        "ru": [],
+        "en": []
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "Gulp"],
+      "image": "/images/projects/golden-property.webp",
+      "imageAlt": {
+        "ru": "Интерфейс Golden Property Solution",
+        "en": "Golden Property Solution interface"
+      },
+      "accent": "blue",
+      "demoUrl": null,
+      "repositories": [],
+      "imageSource": "assets/GoldenPropertySolution.png"
+    },
+    {
+      "slug": "legalide",
+      "title": "Legalide",
+      "status": "draft",
+      "order": 12,
+      "featured": false,
+      "category": {
+        "ru": "Веб-интерфейс",
+        "en": "Web interface"
+      },
+      "summary": {
+        "ru": "Проект из предыдущей версии портфолио.",
+        "en": "A project from the previous portfolio."
+      },
+      "overview": {
+        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
+        "en": "Archived until its external demo and description are updated."
+      },
+      "features": {
+        "ru": [],
+        "en": []
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "Gulp"],
+      "image": "/images/projects/legalide.webp",
+      "imageAlt": {
+        "ru": "Интерфейс Legalide",
+        "en": "Legalide interface"
+      },
+      "accent": "blue",
+      "demoUrl": null,
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Coreytaz/Legalide"
+        }
+      ],
+      "imageSource": "assets/legalace.png"
+    },
+    {
+      "slug": "react-cart",
+      "title": "React Cart",
+      "status": "draft",
+      "order": 13,
+      "featured": false,
+      "category": {
+        "ru": "Веб-интерфейс",
+        "en": "Web interface"
+      },
+      "summary": {
+        "ru": "Проект из предыдущей версии портфолио.",
+        "en": "A project from the previous portfolio."
+      },
+      "overview": {
+        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
+        "en": "Archived until its external demo and description are updated."
+      },
+      "features": {
+        "ru": [],
+        "en": []
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "technologies": ["React", "CSS", "JavaScript", "MUI"],
+      "image": "/images/projects/react-cart.webp",
+      "imageAlt": {
+        "ru": "Интерфейс React Cart",
+        "en": "React Cart interface"
+      },
+      "accent": "blue",
+      "demoUrl": null,
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Coreytaz/cart-react"
+        }
+      ],
+      "imageSource": "assets/React-cart .png"
+    },
+    {
+      "slug": "react-repos",
+      "title": "ReactRepos",
+      "status": "draft",
+      "order": 14,
+      "featured": false,
+      "category": {
+        "ru": "Веб-интерфейс",
+        "en": "Web interface"
+      },
+      "summary": {
+        "ru": "Проект из предыдущей версии портфолио.",
+        "en": "A project from the previous portfolio."
+      },
+      "overview": {
+        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
+        "en": "Archived until its external demo and description are updated."
+      },
+      "features": {
+        "ru": [],
+        "en": []
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "technologies": ["React", "JavaScript", "Axios"],
+      "image": "/images/projects/react-repos.webp",
+      "imageAlt": {
+        "ru": "Интерфейс ReactRepos",
+        "en": "ReactRepos interface"
+      },
+      "accent": "blue",
+      "demoUrl": null,
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Coreytaz/Search-repos-react"
+        }
+      ],
+      "imageSource": "assets/ReactRepos.png"
+    },
+    {
+      "slug": "bastion-group",
+      "title": "BastionGroup",
+      "status": "draft",
+      "order": 15,
+      "featured": false,
+      "category": {
+        "ru": "Веб-интерфейс",
+        "en": "Web interface"
+      },
+      "summary": {
+        "ru": "Проект из предыдущей версии портфолио.",
+        "en": "A project from the previous portfolio."
+      },
+      "overview": {
+        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
+        "en": "Archived until its external demo and description are updated."
+      },
+      "features": {
+        "ru": [],
+        "en": []
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "technologies": ["React", "TypeScript", "Sass", "Redux", "React Router"],
+      "image": "/images/projects/bastion-group.webp",
+      "imageAlt": {
+        "ru": "Интерфейс BastionGroup",
+        "en": "BastionGroup interface"
+      },
+      "accent": "blue",
+      "demoUrl": null,
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Coreytaz/bastion-group"
+        }
+      ],
+      "imageSource": "assets/bastion-group.png"
+    },
+    {
+      "slug": "elephant-um",
+      "title": "Elephant-um",
+      "status": "draft",
+      "order": 16,
+      "featured": false,
+      "category": {
+        "ru": "Веб-интерфейс",
+        "en": "Web interface"
+      },
+      "summary": {
+        "ru": "Проект из предыдущей версии портфолио.",
+        "en": "A project from the previous portfolio."
+      },
+      "overview": {
+        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
+        "en": "Archived until its external demo and description are updated."
+      },
+      "features": {
+        "ru": [],
+        "en": []
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "technologies": ["React", "TypeScript", "Sass"],
+      "image": "/images/projects/elephant-um.webp",
+      "imageAlt": {
+        "ru": "Интерфейс Elephant-um",
+        "en": "Elephant-um interface"
+      },
+      "accent": "blue",
+      "demoUrl": null,
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Coreytaz/elephant-um"
+        }
+      ],
+      "imageSource": "assets/Elephant-um.png"
+    },
+    {
+      "slug": "react-pizza",
+      "title": "React Pizza",
+      "status": "draft",
+      "order": 17,
+      "featured": false,
+      "category": {
+        "ru": "Веб-интерфейс",
+        "en": "Web interface"
+      },
+      "summary": {
+        "ru": "Проект из предыдущей версии портфолио.",
+        "en": "A project from the previous portfolio."
+      },
+      "overview": {
+        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
+        "en": "Archived until its external demo and description are updated."
+      },
+      "features": {
+        "ru": [],
+        "en": []
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Sass",
+        "Redux",
+        "Axios",
+        "React Router"
+      ],
+      "image": "/images/projects/react-pizza.webp",
+      "imageAlt": {
+        "ru": "Интерфейс React Pizza",
+        "en": "React Pizza interface"
+      },
+      "accent": "blue",
+      "demoUrl": null,
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Coreytaz/ReactPizza"
+        }
+      ],
+      "imageSource": "assets/pizzaReact.png"
+    },
+    {
+      "slug": "react-chat",
+      "title": "React Chat",
+      "status": "published",
+      "order": 1,
+      "featured": true,
+      "category": {
+        "ru": "Real-time приложение",
+        "en": "Real-time application"
+      },
+      "summary": {
+        "ru": "Чат на React с обменом сообщениями через Socket.IO и отдельным backend.",
+        "en": "A React chat application with Socket.IO messaging and a dedicated backend."
+      },
+      "overview": {
+        "ru": "React Chat — проект для работы с сообщениями в реальном времени. Клиентская часть использует React и TypeScript, а обмен событиями построен на Socket.IO. В демо доступен интерфейс входа и регистрации; серверная часть опубликована отдельно.",
+        "en": "React Chat explores real-time messaging. The client uses React and TypeScript, while Socket.IO carries events. The demo exposes the login and registration interface; the backend is published separately."
+      },
+      "features": {
+        "ru": [
+          "Вход и регистрация в веб-интерфейсе.",
+          "Обмен событиями в реальном времени через Socket.IO.",
+          "Отдельные репозитории клиента и сервера."
+        ],
+        "en": [
+          "Login and registration in the web interface.",
+          "Real-time events over Socket.IO.",
+          "Separate repositories for the client and server."
+        ]
+      },
+      "decisions": {
+        "ru": [
+          "React Router отвечает за клиентскую навигацию.",
+          "Redux Toolkit хранит состояние, React Query используется для синхронизации данных.",
+          "NestJS, MongoDB и JWT используются на серверной стороне."
+        ],
+        "en": [
+          "React Router handles client-side navigation.",
+          "Redux Toolkit stores state; React Query synchronizes data.",
+          "The backend uses NestJS, MongoDB, and JWT."
+        ]
+      },
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Redux Toolkit",
+        "TanStack Query",
+        "Socket.IO",
+        "NestJS",
+        "MongoDB"
+      ],
+      "image": "/images/projects/react-chat.webp",
+      "imageAlt": {
+        "ru": "Интерфейс React Chat",
+        "en": "React Chat interface"
+      },
+      "accent": "mint",
+      "demoUrl": "https://react-web-chat.vercel.app",
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Coreytaz/react-web-chat"
+        },
+        {
+          "label": "Backend",
+          "url": "https://github.com/Coreytaz/React_Chat_Back"
+        }
+      ],
+      "imageSource": "assets/ReactChat.png"
+    },
+    {
+      "slug": "spacex-ships",
+      "title": "SpaceX Ships",
+      "status": "published",
+      "order": 2,
+      "featured": true,
+      "category": {
+        "ru": "Каталог данных",
+        "en": "Data explorer"
+      },
+      "summary": {
+        "ru": "Суда SpaceX: поиск, фильтры и постраничная навигация по каталогу.",
+        "en": "Explore SpaceX ships with search, filters, and paginated results."
+      },
+      "overview": {
+        "ru": "SpaceX Ships — интерфейс каталога судов. В превью представлены список, фильтр по названию, порту и типу судна, а также пагинация. Проект использует React, TypeScript и организацию кода по Feature-Sliced Design.",
+        "en": "SpaceX Ships is a ship catalog interface. The preview shows a list with name, port, and vessel-type filters, plus pagination. The project uses React, TypeScript, and Feature-Sliced Design."
+      },
+      "features": {
+        "ru": [
+          "Карточки судов с типом и портом.",
+          "Фильтрация по названию, порту и типу судна.",
+          "Постраничная навигация по результатам."
+        ],
+        "en": [
+          "Ship cards with vessel type and home port.",
+          "Filtering by name, port, and vessel type.",
+          "Paginated navigation through results."
+        ]
+      },
+      "decisions": {
+        "ru": [
+          "RTK Query используется для получения и кэширования данных.",
+          "Feature-Sliced Design задаёт структуру приложения.",
+          "React Router организует навигацию, Sass — стили интерфейса."
+        ],
+        "en": [
+          "RTK Query fetches and caches data.",
+          "Feature-Sliced Design structures the application.",
+          "React Router handles navigation, while Sass styles the interface."
+        ]
+      },
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Redux Toolkit",
+        "RTK Query",
+        "React Router",
+        "Feature-Sliced Design"
+      ],
+      "image": "/images/projects/spacex-ships.webp",
+      "imageAlt": {
+        "ru": "Интерфейс SpaceX Ships",
+        "en": "SpaceX Ships interface"
+      },
+      "accent": "lilac",
+      "demoUrl": "https://graff-interactive-test.vercel.app",
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Coreytaz/GraffInteractive-test"
+        }
+      ],
+      "imageSource": "assets/SpaceX Ships.png"
+    },
+    {
+      "slug": "auto-repair",
+      "title": "Автосервис",
+      "status": "draft",
+      "order": 18,
+      "featured": false,
+      "category": {
+        "ru": "Веб-интерфейс",
+        "en": "Web interface"
+      },
+      "summary": {
+        "ru": "Проект из предыдущей версии портфолио.",
+        "en": "A project from the previous portfolio."
+      },
+      "overview": {
+        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
+        "en": "Archived until its external demo and description are updated."
+      },
+      "features": {
+        "ru": [],
+        "en": []
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Radix UI",
+        "Zustand",
+        "Axios",
+        "Feature-Sliced Design"
+      ],
+      "image": "/images/projects/auto-repair.webp",
+      "imageAlt": {
+        "ru": "Интерфейс Автосервис",
+        "en": "Автосервис interface"
+      },
+      "accent": "blue",
+      "demoUrl": null,
+      "repositories": [],
+      "imageSource": "assets/autoRepairConsole.png"
+    },
+    {
+      "slug": "animbook",
+      "title": "AnimBook",
+      "status": "published",
+      "order": 0,
+      "featured": true,
+      "category": {
+        "ru": "Интернет-магазин",
+        "en": "E-commerce"
+      },
+      "summary": {
+        "ru": "Каталог аниме-товаров, избранное и корзина в одном веб-приложении.",
+        "en": "An anime merchandise storefront with a catalog, favorites, and a shopping cart."
+      },
+      "overview": {
+        "ru": "AnimBook — интернет-магазин с каталогом тематических товаров. Интерфейс объединяет навигацию по категориям, избранное и корзину. Frontend построен на Next.js и TypeScript; серверная часть находится в отдельном репозитории.",
+        "en": "AnimBook is an anime merchandise storefront. Its interface brings category browsing, favorites, and a shopping cart together. The frontend uses Next.js and TypeScript, with a backend in a separate repository."
+      },
+      "features": {
+        "ru": [
+          "Каталог с категориями товаров и поиском.",
+          "Избранное и корзина в интерфейсе магазина.",
+          "Авторизация с NextAuth.js."
+        ],
+        "en": [
+          "A product catalog with categories and search.",
+          "Favorites and a shopping cart in the storefront.",
+          "Authentication with NextAuth.js."
+        ]
+      },
+      "decisions": {
+        "ru": [
+          "Next.js App Router организует страницы и навигацию.",
+          "Redux Toolkit и RTK Query используются для состояния и работы с данными.",
+          "Отдельный NestJS backend с PostgreSQL и TypeORM."
+        ],
+        "en": [
+          "Next.js App Router organizes pages and navigation.",
+          "Redux Toolkit and RTK Query handle application state and data.",
+          "A separate NestJS backend uses PostgreSQL and TypeORM."
+        ]
+      },
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Redux Toolkit",
+        "RTK Query",
+        "NextAuth.js",
+        "NestJS",
+        "PostgreSQL"
+      ],
+      "image": "/images/projects/animbook.webp",
+      "imageAlt": {
+        "ru": "Интерфейс AnimBook",
+        "en": "AnimBook interface"
+      },
+      "accent": "blue",
+      "demoUrl": "https://anim-book.vercel.app",
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Coreytaz/AnimBook"
+        },
+        {
+          "label": "Backend",
+          "url": "https://github.com/Coreytaz/AnimBook-server"
+        }
+      ],
+      "imageSource": "assets/AnimBook.png"
+    }
+  ]
+}
