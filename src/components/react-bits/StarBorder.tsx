@@ -4,8 +4,6 @@
 import React, { useEffect, useRef } from "react";
 import { useMotion } from "@/components/motion-provider";
 
-import "./StarBorder.css";
-
 export type StarBorderTheme = "dark" | "light";
 
 export type StarBorderHover = "lap" | "brighten" | "reveal" | "none";
@@ -737,7 +735,7 @@ const StarBorder = <T extends React.ElementType = "button">({
   return (
     <Component
       ref={rootRef}
-      className={`star-border${className ? ` ${className}` : ""}`}
+      className={String.raw`star-border relative isolate inline-flex items-center justify-center gap-[0.5rem] m-0 p-[0.875rem_1.5rem] [border:0] rounded-[var(--star-border-radius)] [background:var(--star-border-surface)] [color:var(--star-border-text)] [font-family:inherit] font-medium leading-[1.25] no-underline [-webkit-tap-highlight-color:transparent] before:[content:''] before:absolute before:inset-0 before:z-[-1] before:rounded-[inherit] before:[box-shadow:inset_0_0_0_var(--star-border-thickness)_var(--star-border-track)] before:pointer-events-none [button&]:cursor-pointer [a&]:cursor-pointer focus-visible:[outline:2px_solid_var(--star-border-track)] focus-visible:[outline-offset:3px] [&:disabled]:cursor-not-allowed [&:disabled]:opacity-[0.5] [&.action-primary]:gap-6 [&.action-primary]:p-[16px_22px] [&.action-primary]:[font-size:12px] [&.action-primary]:[font-weight:650] [&.action-primary]:[line-height:1.5] [&.action-primary]:[background:var(--star-border-surface)] [&.action-primary]:[color:var(--star-border-text)] ${className ? String.raw` ${className}` : ""}`}
       style={
         {
           "--star-border-radius": `${settings.radius}px`,
@@ -755,7 +753,9 @@ const StarBorder = <T extends React.ElementType = "button">({
     >
       <canvas
         ref={canvasRef}
-        className="star-border__light"
+        className={
+          "star-border__light absolute top-[-48px] left-[-48px] z-[-1] w-[calc(100%_+_96px)] h-[calc(100%_+_96px)] pointer-events-none [html[data-motion='off']_&]:hidden print:hidden"
+        }
         aria-hidden="true"
       />
       {children}

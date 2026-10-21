@@ -28,7 +28,10 @@ export function HeroBackground() {
   }, [enabled, Waves]);
 
   return (
-    <div className="hero-background" aria-hidden="true">
+    <div
+      className={String.raw`hero-background absolute inset-0 pointer-events-none [background:radial-gradient(_ellipse_at_80%_40%,_color-mix(in_srgb,_var(--primary)_8%,_transparent),_transparent_65%_)] [mask-image:linear-gradient(#000_0%,_#000_65%,_transparent_100%)] [&_>_.waves]:[mask-image:linear-gradient(90deg,_#0001,_#0007_40%,_#000_75%)] [&_.waves\_\_canvas]:opacity-[0] [&_.waves[data-render-state='ready']_.waves\_\_canvas]:opacity-[1] before:[content:''] before:absolute before:inset-0 before:opacity-[0.35] before:[background:repeating-radial-gradient(_ellipse_at_110%_100%,_transparent_0_28px,_color-mix(in_srgb,_var(--primary)_10%,_transparent)_29px,_transparent_30px_45px_)] before:[mask-image:linear-gradient(90deg,_transparent_20%,_#000)] [&:has(.waves[data-render-state='ready'])::before]:hidden [html[data-motion='off']_&_>_.waves]:hidden print:hidden`}
+      aria-hidden="true"
+    >
       {enabled && Waves && (
         <Waves
           lineColor={resolvedTheme === "dark" ? "#91abff" : "#4166db"}

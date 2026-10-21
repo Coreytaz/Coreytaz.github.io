@@ -10,7 +10,7 @@ import {
   type MouseEvent,
   type ReactNode,
 } from "react";
-import "./TiltedCard.css";
+
 import Image from "next/image";
 import { useMotion } from "@/components/motion-provider";
 
@@ -150,7 +150,7 @@ export const TiltedCardLayer = ({
   children,
 }: TiltedCardLayerProps) => (
   <div
-    className={`tilted-card__layer ${className}`.trim()}
+    className={String.raw`tilted-card__layer absolute inset-0 [transform:translate3d(_calc(var(--tc-px,_0)_*_var(--tc-depth,_0)_*_1px),_calc(var(--tc-py,_0)_*_var(--tc-depth,_0)_*_1px),_0_)] ${className}`.trim()}
     style={{ "--tc-depth": depth, ...style } as CSSProperties}
   >
     {children}
@@ -743,7 +743,7 @@ const TiltedCard = ({
       ref={(element) => {
         figureRef.current = element;
       }}
-      className={`tilted-card ${className}`.trim()}
+      className={String.raw`tilted-card relative flex items-center justify-center m-0 [outline:none] [touch-action:pan-y_pinch-zoom] select-none [-webkit-user-select:none] [-webkit-tap-highlight-color:transparent] [&[data-interactive]]:cursor-pointer [&[data-active]]:z-[2] [&:focus-visible_.tilted-card\_\_rim]:[box-shadow:inset_0_0_0_2px_rgba(255,_255,_255,_0.7),_inset_0_0_0_3px_rgba(0,_0,_0,_0.35)] ${className}`.trim()}
       style={{
         width: toLength(containerWidth),
         height: toLength(containerHeight),
@@ -761,7 +761,9 @@ const TiltedCard = ({
     >
       <div
         ref={shadowRef}
-        className="tilted-card__shadow"
+        className={
+          "tilted-card__shadow absolute inset-0 m-auto max-w-[100%] max-h-[100%] [background:var(--tc-shadow-color,_rgba(0,_0,_0,_0.55))] [filter:blur(20px)] opacity-[0] pointer-events-none [will-change:transform,_opacity]"
+        }
         aria-hidden="true"
         style={{
           width: toLength(imageWidth),
@@ -771,7 +773,9 @@ const TiltedCard = ({
       />
       <div
         ref={bodyRef}
-        className="tilted-card__body"
+        className={
+          "tilted-card__body relative max-w-[100%] max-h-[100%] [transform-style:preserve-3d]"
+        }
         style={
           {
             width: toLength(imageWidth),
@@ -781,13 +785,19 @@ const TiltedCard = ({
           } as CSSProperties
         }
       >
-        <div className="tilted-card__face tilted-card__front">
+        <div
+          className={
+            "tilted-card__face absolute inset-0 overflow-hidden rounded-[var(--tc-radius)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] isolate tilted-card__front"
+          }
+        >
           {imageSrc && (
             <Image
               unoptimized
               width={600}
               height={600}
-              className="tilted-card__img"
+              className={
+                "tilted-card__img absolute block max-w-[none] object-cover pointer-events-none [transform:translate3d(_calc(var(--tc-px,_0)_*_var(--tc-depth,_0)_*_1px),_calc(var(--tc-py,_0)_*_var(--tc-depth,_0)_*_1px),_0_)]"
+              }
               src={imageSrc}
               alt={altText}
               draggable={false}
@@ -803,24 +813,58 @@ const TiltedCard = ({
             />
           )}
           {children}
-          <span className="tilted-card__glare" aria-hidden="true" />
-          <span className="tilted-card__rim" aria-hidden="true" />
-          <span className="tilted-card__edge" aria-hidden="true" />
+          <span
+            className={
+              "tilted-card__glare absolute inset-0 z-[5] [background:radial-gradient(_farthest-corner_circle_at_var(--tc-gx,_50%)_var(--tc-gy,_50%),_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.34))_0%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.331))_9%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.285))_18%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.202))_27%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.108))_36%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.035))_45%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.003))_54%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_0)_60%_)] [mix-blend-mode:screen] pointer-events-none"
+            }
+            aria-hidden="true"
+          />
+          <span
+            className={
+              "tilted-card__rim absolute inset-0 z-[6] rounded-[inherit] [box-shadow:inset_0_0_0_1px_var(--tc-rim-color,_rgba(255,_255,_255,_0.08)),_inset_0_1px_0_var(--tc-rim-light,_rgba(255,_255,_255,_0.12))] pointer-events-none"
+            }
+            aria-hidden="true"
+          />
+          <span
+            className={
+              "tilted-card__edge absolute inset-0 z-[7] [box-sizing:border-box] p-[1px] rounded-[inherit] [background:radial-gradient(_farthest-side_circle_at_var(--tc-gx,_50%)_var(--tc-gy,_50%),_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.85))_0%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.71))_18%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.43))_36%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.16))_54%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.02))_72%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_0)_85%_)] [-webkit-mask:linear-gradient(#000_0_0)_content-box,_linear-gradient(#000_0_0)] [-webkit-mask-composite:xor] [mask:linear-gradient(#000_0_0)_content-box_exclude,_linear-gradient(#000_0_0)] pointer-events-none"
+            }
+            aria-hidden="true"
+          />
         </div>
         {backContent && (
           <div
-            className="tilted-card__face tilted-card__back"
+            className={
+              "tilted-card__face absolute inset-0 overflow-hidden rounded-[var(--tc-radius)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] isolate tilted-card__back [transform:rotateY(180deg)]"
+            }
             aria-hidden={!isFlipped}
           >
             {backContent}
-            <span className="tilted-card__glare" aria-hidden="true" />
-            <span className="tilted-card__rim" aria-hidden="true" />
-            <span className="tilted-card__edge" aria-hidden="true" />
+            <span
+              className={
+                "tilted-card__glare absolute inset-0 z-[5] [background:radial-gradient(_farthest-corner_circle_at_var(--tc-gx,_50%)_var(--tc-gy,_50%),_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.34))_0%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.331))_9%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.285))_18%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.202))_27%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.108))_36%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.035))_45%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.003))_54%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_0)_60%_)] [mix-blend-mode:screen] pointer-events-none"
+              }
+              aria-hidden="true"
+            />
+            <span
+              className={
+                "tilted-card__rim absolute inset-0 z-[6] rounded-[inherit] [box-shadow:inset_0_0_0_1px_var(--tc-rim-color,_rgba(255,_255,_255,_0.08)),_inset_0_1px_0_var(--tc-rim-light,_rgba(255,_255,_255,_0.12))] pointer-events-none"
+              }
+              aria-hidden="true"
+            />
+            <span
+              className={
+                "tilted-card__edge absolute inset-0 z-[7] [box-sizing:border-box] p-[1px] rounded-[inherit] [background:radial-gradient(_farthest-side_circle_at_var(--tc-gx,_50%)_var(--tc-gy,_50%),_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.85))_0%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.71))_18%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.43))_36%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.16))_54%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_calc(var(--tc-glare,_0)_*_0.02))_72%,_rgba(var(--tc-glare-rgb,_255,_255,_255),_0)_85%_)] [-webkit-mask:linear-gradient(#000_0_0)_content-box,_linear-gradient(#000_0_0)] [-webkit-mask-composite:xor] [mask:linear-gradient(#000_0_0)_content-box_exclude,_linear-gradient(#000_0_0)] pointer-events-none"
+              }
+              aria-hidden="true"
+            />
           </div>
         )}
         {displayOverlayContent && overlayContent && (
           <div
-            className="tilted-card__overlay"
+            className={
+              "tilted-card__overlay absolute inset-0 z-[2] [transform:translateZ(var(--tc-lift,_30px))] [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
+            }
             style={{ "--tc-lift": `${overlayDepth}px` } as CSSProperties}
           >
             {overlayContent}
@@ -828,7 +872,12 @@ const TiltedCard = ({
         )}
       </div>
       {showTooltip && captionText && (
-        <figcaption ref={captionRef} className="tilted-card__caption">
+        <figcaption
+          ref={captionRef}
+          className={
+            "tilted-card__caption absolute top-0 left-0 z-[3] m-[16px_0_0_14px] p-[5px_9px] rounded-[7px] [background:#ffffff] [box-shadow:0_0_0_1px_rgba(24,_24,_27,_0.08),_0_8px_18px_-8px_rgba(0,_0,_0,_0.45)] [color:#18181b] [font-size:12px] font-medium leading-[16px] whitespace-nowrap opacity-[0] pointer-events-none [transform-origin:0_0] [will-change:transform,_opacity]"
+          }
+        >
           {captionText}
         </figcaption>
       )}

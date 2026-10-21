@@ -2,7 +2,6 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import "./Aurora.css";
 
 export interface AuroraProps {
   colorStops?: string[];
@@ -629,10 +628,16 @@ const Aurora = ({
   return (
     <div
       ref={containerRef}
-      className={`aurora-container${className ? ` ${className}` : ""}`}
+      className={String.raw`aurora-container relative w-full h-full overflow-hidden [&[data-render-state='ready']_.aurora-canvas]:opacity-[1] ${className ? String.raw` ${className}` : ""}`}
       style={style}
     >
-      <canvas ref={canvasRef} className="aurora-canvas" aria-hidden="true" />
+      <canvas
+        ref={canvasRef}
+        className={
+          "aurora-canvas opacity-[0] absolute inset-0 block w-full h-full"
+        }
+        aria-hidden="true"
+      />
     </div>
   );
 };

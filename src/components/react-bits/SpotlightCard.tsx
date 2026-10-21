@@ -4,8 +4,6 @@
 import React, { useEffect, useRef } from "react";
 import { useMotion } from "@/components/motion-provider";
 
-import "./SpotlightCard.css";
-
 export type SpotlightShape = "circle" | "beam";
 
 export type SpotlightCardProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -377,7 +375,7 @@ const SpotlightCard = ({
   return (
     <div
       ref={rootRef}
-      className={`spotlight-card${className ? ` ${className}` : ""}`}
+      className={String.raw`spotlight-card [&.skill-card]:p-8 relative isolate overflow-hidden p-[2rem] rounded-[1.5rem] [background-color:var(--spotlight-card-surface)] [box-shadow:var(--spotlight-card-shadow)] [&.project-spotlight]:p-0 [&.project-spotlight]:rounded-[12px] [&.project-spotlight]:[background:transparent] [&.project-spotlight]:[box-shadow:none] [&.project-spotlight]:min-w-[0] ${className ? String.raw` ${className}` : ""}`}
       style={
         {
           "--spotlight-card-surface": palette.surface,
@@ -390,18 +388,33 @@ const SpotlightCard = ({
     >
       <span
         ref={lightRef}
-        className="spotlight-card__light"
+        className={
+          "spotlight-card__light absolute inset-0 rounded-[inherit] pointer-events-none z-[-1] opacity-[0] [html[data-motion='off']_&]:hidden print:hidden"
+        }
         aria-hidden="true"
       />
       <span
         ref={grainRef}
-        className="spotlight-card__grain"
+        className={
+          "spotlight-card__grain absolute inset-0 rounded-[inherit] pointer-events-none z-[-1] opacity-[0] [background-size:160px_160px] [mix-blend-mode:overlay] [html[data-motion='off']_&]:hidden print:hidden"
+        }
         style={{ backgroundImage: NOISE }}
         aria-hidden="true"
       />
       {children}
-      <span className="spotlight-card__border" aria-hidden="true" />
-      <span ref={edgeRef} className="spotlight-card__edge" aria-hidden="true" />
+      <span
+        className={
+          "spotlight-card__border absolute inset-0 rounded-[inherit] pointer-events-none z-[1] p-[1px] [-webkit-mask:linear-gradient(#000_0_0)_content-box,_linear-gradient(#000_0_0)] [-webkit-mask-composite:xor] [mask:linear-gradient(#000_0_0)_content-box_exclude,_linear-gradient(#000_0_0)] [background:var(--spotlight-card-border)]"
+        }
+        aria-hidden="true"
+      />
+      <span
+        ref={edgeRef}
+        className={
+          "spotlight-card__edge absolute inset-0 rounded-[inherit] pointer-events-none z-[1] p-[1px] [-webkit-mask:linear-gradient(#000_0_0)_content-box,_linear-gradient(#000_0_0)] [-webkit-mask-composite:xor] [mask:linear-gradient(#000_0_0)_content-box_exclude,_linear-gradient(#000_0_0)] opacity-[0] [html[data-motion='off']_&]:hidden print:hidden"
+        }
+        aria-hidden="true"
+      />
     </div>
   );
 };

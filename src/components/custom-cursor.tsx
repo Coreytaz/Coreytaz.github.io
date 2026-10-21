@@ -169,10 +169,16 @@ export function CustomCursor() {
   }, [enabled]);
 
   return (
-    <div className="custom-cursor" ref={rootRef} aria-hidden="true">
+    <div
+      className={
+        "custom-cursor hidden fixed inset-0 z-[9999] pointer-events-none [html[data-custom-cursor='on']_&]:block [&[data-kind='interactive']_.cursor-default-shape]:hidden [&[data-kind='interactive']_.cursor-pointer-shape]:block! [&[data-kind='interactive']_.cursor-pointer-shape]:[translate:-9px_-2px] [&[data-kind='interactive']_.cursor-pointer-shape]:[transform-origin:9px_2px] [&[data-kind='interactive']_.cursor-arrow_svg]:[transform:scale(1.12)] [&[data-kind='interactive']_.cursor-arrow_svg]:[filter:drop-shadow(_0_0_5px_color-mix(in_srgb,_var(--primary)_50%,_transparent)_)] [&[data-kind='disabled']_.cursor-arrow]:opacity-[0.5] [&[data-pressed='true']_.cursor-arrow_svg]:[transform:scale(0.85)] [@media_(forced-colors:_active)]:[html[data-custom-cursor='on']_&]:hidden print:[html[data-custom-cursor='on']_&]:hidden"
+      }
+      ref={rootRef}
+      aria-hidden="true"
+    >
       {enabled && canGlow && Glow && (
         <Glow
-          className="portfolio-glow"
+          className={String.raw`portfolio-glow absolute inset-0 w-full h-full overflow-hidden pointer-events-none [&[data-render-state='fallback']_>_.glow-cursor\_\_canvas]:hidden [&[data-render-state='fallback']_>_.glow-cursor\_\_fallback]:block`}
           color={resolvedTheme === "dark" ? "#91abff" : "#4166db"}
           secondaryColor="#8074db"
           theme={resolvedTheme === "dark" ? "dark" : "light"}
@@ -189,7 +195,12 @@ export function CustomCursor() {
           aria-hidden="true"
         />
       )}
-      <span className="cursor-arrow" ref={arrowRef}>
+      <span
+        className={
+          "cursor-arrow absolute top-0 left-0 [will-change:transform] text-primary [html[data-native-cursor='on']_&]:[visibility:hidden] [&_svg]:block [&_svg]:[translate:-2px_-2px] [&_svg]:[transform-origin:2px_2px] [&_svg]:[filter:drop-shadow(0_1px_2px_#0005)] [&_svg]:[transition:transform_160ms_ease,_filter_160ms_ease]"
+        }
+        ref={arrowRef}
+      >
         <svg
           className="cursor-default-shape"
           width="24"
@@ -206,7 +217,7 @@ export function CustomCursor() {
           />
         </svg>
         <svg
-          className="cursor-pointer-shape"
+          className={"cursor-pointer-shape hidden!"}
           width="26"
           height="28"
           viewBox="0 0 26 28"

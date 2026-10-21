@@ -2,7 +2,6 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import "./Waves.css";
 
 export type WavesLineStyle = "solid" | "dashed";
 
@@ -873,10 +872,14 @@ const Waves = ({
   return (
     <div
       ref={containerRef}
-      className={`waves${className ? ` ${className}` : ""}`}
+      className={String.raw`waves absolute inset-0 overflow-hidden ${className ? String.raw` ${className}` : ""}`}
       style={{ backgroundColor, ...style }}
     >
-      <canvas ref={canvasRef} className="waves__canvas" aria-hidden="true" />
+      <canvas
+        ref={canvasRef}
+        className={"waves__canvas absolute inset-0 block w-full h-full"}
+        aria-hidden="true"
+      />
     </div>
   );
 };

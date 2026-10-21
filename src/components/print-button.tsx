@@ -8,7 +8,9 @@ export function PrintButton({ label }: { label: string }) {
     <Button
       variant="ghost"
       onClick={() => window.print()}
-      className="print-button"
+      className={
+        "print-button [font-size:9px] text-muted-foreground print:hidden!"
+      }
     >
       <Printer size={15} aria-hidden="true" />
       {label}

@@ -1226,22 +1226,30 @@ const GlowCursor = ({
   return (
     <div
       ref={containerRef}
-      className={`glow-cursor${className ? ` ${className}` : ""}`}
+      className={String.raw`glow-cursor relative w-full h-full overflow-hidden ${className ? String.raw` ${className}` : ""}`}
       style={style}
       {...rest}
     >
       <canvas
         ref={canvasRef}
-        className="glow-cursor__canvas"
+        className={
+          "glow-cursor__canvas absolute inset-0 block w-full h-full pointer-events-none select-none"
+        }
         style={{ mixBlendMode: mode }}
         aria-hidden="true"
       />
       <canvas
         ref={fallbackRef}
-        className="glow-cursor__canvas glow-cursor__fallback"
+        className={
+          "glow-cursor__canvas absolute inset-0 w-full h-full pointer-events-none select-none glow-cursor__fallback hidden"
+        }
         aria-hidden="true"
       />
-      {children && <div className="glow-cursor__content">{children}</div>}
+      {children && (
+        <div className={"glow-cursor__content relative z-[1] w-full h-full"}>
+          {children}
+        </div>
+      )}
     </div>
   );
 };

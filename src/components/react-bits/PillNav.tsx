@@ -153,34 +153,56 @@ const SIZES: Record<string, Record<string, string>> = {
   },
 };
 
-const ROOT = "pill-nav";
-const SURFACE = "pill-nav__surface";
-const RIM = "pill-nav__rim";
-const ROOT_RIM = "pill-nav__rim pill-nav__rim--root";
-const LOGO = "pill-nav__logo";
-const LOGO_LINK = "pill-nav__logo-link";
-const MARK = "pill-nav__mark";
-const BAR = "pill-nav__bar";
-const TRACK = "pill-nav__track";
-const LIST = "pill-nav__list";
-const SLOT = "pill-nav__slot";
-const ITEM = "pill-nav__item";
-const FACE = "pill-nav__face";
-const FACE_ALT = "pill-nav__face-alt";
-const FILL = "pill-nav__fill";
-const GLIDE = "pill-nav__glide";
-const INK = "pill-nav__ink";
-const INK_ITEM = "pill-nav__ink-item";
-const DOT = "pill-nav__dot";
-const TOGGLE = "pill-nav__toggle";
-const TOGGLE_BARE = "pill-nav__toggle--bare";
-const BURGER = "pill-nav__burger";
-const LINE_TOP = "pill-nav__line pill-nav__line--top";
-const LINE_BOTTOM = "pill-nav__line pill-nav__line--bottom";
-const PANEL = "pill-nav__panel";
-const MENU = "pill-nav__menu";
-const ROW = "pill-nav__row";
-const MEASURE = "pill-nav__measure";
+const ROOT = String.raw`pill-nav [--pn-roll:calc(var(--pn-inner)_/_2_+_0.7em)] relative inline-flex items-center gap-[var(--pn-gap)] max-w-[100%] [font-size:var(--pn-font)] leading-[1] [-webkit-tap-highlight-color:transparent] [&[data-collapsed]]:flex [&[data-collapsed]]:w-full [&[data-collapsed]]:justify-between [&[data-layout='joined']]:gap-0.5 [&[data-layout='joined']]:p-[var(--pn-pad)] [&[data-layout='joined']]:rounded-[999px] [&[data-layout='joined'][data-panel]]:[background:transparent] [&[data-layout='joined'][data-panel]]:[box-shadow:none] [&[data-layout='joined'][data-panel]]:[-webkit-backdrop-filter:none] [&[data-layout='joined'][data-panel]]:[backdrop-filter:none] [&[data-panel]_.pill-nav\_\_rim--root]:opacity-[0] [&[data-layout='joined']_.pill-nav\_\_logo]:w-[var(--pn-inner)] [&[data-layout='joined']_.pill-nav\_\_logo]:h-[var(--pn-inner)] [&[data-layout='joined']_.pill-nav\_\_bar]:h-[var(--pn-inner)] [&[data-layout='joined']_.pill-nav\_\_bar]:p-0 [&[data-items='pill']]:[--pn-item-gap:3px] [&[data-items='pill']_.pill-nav\_\_item]:[background:var(--pn-tile)] [&[data-items='pill']_.pill-nav\_\_item]:[box-shadow:var(--pn-tile-rim)] [&[data-items='pill']_.pill-nav\_\_item]:[color:var(--pn-strong)] [&[data-focus]_.pill-nav\_\_glide]:[box-shadow:var(--pn-pill-shadow),_0_0_0_2px_var(--pn-ring)] [&[data-dot-lit]_.pill-nav\_\_dot]:[background:var(--pn-pill-ink)] [&[data-layout='joined']_.pill-nav\_\_toggle]:w-[var(--pn-inner)] [&[data-layout='joined']_.pill-nav\_\_toggle]:h-[var(--pn-inner)] [&[data-open]_.pill-nav\_\_line--top]:top-[4.25px] [&[data-open]_.pill-nav\_\_line--top]:[transform:rotate(45deg)] [&[data-open]_.pill-nav\_\_line--bottom]:top-[4.25px] [&[data-open]_.pill-nav\_\_line--bottom]:[transform:rotate(-45deg)] [&[data-layout='joined']_.pill-nav\_\_panel]:pt-[calc(var(--pn-h)_+_4px)]`;
+const SURFACE =
+  "pill-nav__surface [background:var(--pn-surface)] [box-shadow:var(--pn-shadow)] [-webkit-backdrop-filter:var(--pn-blur)] [backdrop-filter:var(--pn-blur)]";
+const RIM =
+  "pill-nav__rim absolute inset-0 z-[4] rounded-[inherit] [box-shadow:inset_0_0_0_1px_var(--pn-edge),_inset_0_1px_0_var(--pn-rim)] pointer-events-none";
+const ROOT_RIM =
+  "pill-nav__rim absolute inset-0 z-[4] rounded-[inherit] [box-shadow:inset_0_0_0_1px_var(--pn-edge),_inset_0_1px_0_var(--pn-rim)] pointer-events-none pill-nav__rim--root";
+const LOGO =
+  "pill-nav__logo relative z-[2] [display:inline-grid] flex-[none] [place-items:center] w-[var(--pn-h)] h-[var(--pn-h)] rounded-[999px]";
+const LOGO_LINK =
+  "pill-nav__logo-link absolute inset-0 grid [place-items:center] rounded-[inherit] [color:var(--pn-strong)] no-underline [outline:none] focus-visible:[outline:2px_solid_var(--pn-ring)] focus-visible:[outline-offset:2px]";
+const MARK =
+  "pill-nav__mark grid [place-items:center] w-[var(--pn-mark)] h-[var(--pn-mark)] [&_img]:block [&_img]:w-full [&_img]:h-full [&_img]:object-contain [&_svg]:block [&_svg]:w-full [&_svg]:h-full [&_svg]:object-contain";
+const BAR =
+  "pill-nav__bar relative z-[1] flex items-center min-w-[0] h-[var(--pn-h)] p-[var(--pn-pad)] rounded-[999px] [box-sizing:border-box]";
+const TRACK = "pill-nav__track relative h-full";
+const LIST =
+  "pill-nav__list flex items-stretch gap-[var(--pn-item-gap,_2px)] h-full m-0 p-0 list-none";
+const SLOT = String.raw`pill-nav__slot flex [&[data-lit]_.pill-nav\_\_item]:[color:var(--pn-strong)] [&[data-on]_.pill-nav\_\_face]:[transform:translateY(calc(var(--pn-roll)_*_-1))] [&[data-on]_.pill-nav\_\_face]:[transition-duration:0.5s] [&[data-hover]_.pill-nav\_\_face]:[transform:translateY(calc(var(--pn-roll)_*_-1))] [&[data-hover]_.pill-nav\_\_face]:[transition-duration:0.5s] [&[data-on]_.pill-nav\_\_face-alt]:[transform:translateY(0)] [&[data-on]_.pill-nav\_\_face-alt]:[transition-duration:0.5s] [&[data-hover]_.pill-nav\_\_face-alt]:[transform:translateY(0)] [&[data-hover]_.pill-nav\_\_face-alt]:[transition-duration:0.5s] [&[data-on]_.pill-nav\_\_fill]:[transform:scale(1)] [&[data-on]_.pill-nav\_\_fill]:[transition:transform_0.55s_cubic-bezier(0.22,_1,_0.36,_1)] [&[data-hover]_.pill-nav\_\_fill]:[transform:scale(1)] [&[data-hover]_.pill-nav\_\_fill]:[transition:transform_0.55s_cubic-bezier(0.22,_1,_0.36,_1)]`;
+const ITEM =
+  "pill-nav__item relative inline-flex items-center justify-center h-full p-[0_var(--pn-x)] [border:0] rounded-[999px] [background:none] [color:var(--pn-text)] [font-family:inherit] [font-size:inherit] leading-[inherit] font-medium tracking-[-0.005em] whitespace-nowrap no-underline cursor-pointer [outline:none] overflow-hidden isolate [transition:color_0.25s_ease] [&[aria-current]]:[color:var(--pn-strong)] focus-visible:[outline:2px_solid_var(--pn-ring)] focus-visible:[outline-offset:-2px] [@media_(prefers-reduced-motion:_reduce)]:[transition:none]";
+const FACE =
+  "pill-nav__face inline-flex items-center gap-[0.45em] [transition:transform_0.36s_cubic-bezier(0.22,_1,_0.36,_1)] [&_svg]:w-[1.15em] [&_svg]:h-[1.15em] [&_svg]:flex-[none] [@media_(prefers-reduced-motion:_reduce)]:[transition:none]";
+const FACE_ALT =
+  "pill-nav__face-alt absolute inset-0 inline-flex items-center justify-center gap-[0.45em] [color:var(--pn-pill-ink)] [transform:translateY(var(--pn-roll))] [transition:transform_0.36s_cubic-bezier(0.22,_1,_0.36,_1)] [&_svg]:w-[1.15em] [&_svg]:h-[1.15em] [&_svg]:flex-[none] [@media_(prefers-reduced-motion:_reduce)]:[transition:none]";
+const FILL =
+  "pill-nav__fill absolute top-[100%] left-[50%] z-[-1] w-[var(--pn-fill,_200%)] h-[var(--pn-fill,_200%)] m-[calc(var(--pn-fill,_200%)_/_-2)_0_0_calc(var(--pn-fill,_200%)_/_-2)] rounded-[50%] [background:var(--pn-pill)] [transform:scale(0)] [transition:transform_0.36s_cubic-bezier(0.4,_0,_0.2,_1)] pointer-events-none [@media_(prefers-reduced-motion:_reduce)]:[transition:none]";
+const GLIDE =
+  "pill-nav__glide absolute top-0 bottom-0 left-0 w-[0] rounded-[999px] [background:var(--pn-pill)] [box-shadow:var(--pn-pill-shadow)] opacity-[0] pointer-events-none [transform-origin:50%_50%] [will-change:transform,_width,_opacity]";
+const INK =
+  "pill-nav__ink absolute inset-0 flex items-stretch gap-[var(--pn-item-gap,_2px)] [color:var(--pn-pill-ink)] pointer-events-none [clip-path:inset(0_100%_0_0)]";
+const INK_ITEM =
+  "pill-nav__ink-item inline-flex items-center justify-center gap-[0.45em] h-full p-[0_var(--pn-x)] font-medium tracking-[-0.005em] whitespace-nowrap [&_svg]:w-[1.15em] [&_svg]:h-[1.15em] [&_svg]:flex-[none]";
+const DOT =
+  "pill-nav__dot absolute bottom-[calc((var(--pn-inner)_-_var(--pn-font))_/_4_-_2px)] left-0 w-1 h-1 ml-[-2px] rounded-[999px] [background:var(--pn-dot)] opacity-[0] pointer-events-none [transition:background-color_0.3s_ease] [will-change:transform,_opacity]";
+const TOGGLE =
+  "pill-nav__toggle focus-visible:[outline:2px_solid_var(--pn-ring)] focus-visible:[outline-offset:2px] relative z-[3] [display:inline-grid] flex-[none] [place-items:center] w-[var(--pn-h)] h-[var(--pn-h)] p-0 [border:0] rounded-[999px] [color:var(--pn-strong)] cursor-pointer [outline:none]";
+const TOGGLE_BARE = "pill-nav__toggle--bare [background:transparent]";
+const BURGER = "pill-nav__burger relative w-4 h-2.5";
+const LINE_TOP =
+  "pill-nav__line absolute left-0 w-full h-[1.5px] rounded-[2px] [background:currentColor] [transition:transform_0.45s_cubic-bezier(0.22,_1,_0.36,_1),_top_0.45s_cubic-bezier(0.22,_1,_0.36,_1)] [@media_(prefers-reduced-motion:_reduce)]:[transition:none] pill-nav__line--top top-[1.5px]";
+const LINE_BOTTOM =
+  "pill-nav__line absolute left-0 w-full h-[1.5px] rounded-[2px] [background:currentColor] [transition:transform_0.45s_cubic-bezier(0.22,_1,_0.36,_1),_top_0.45s_cubic-bezier(0.22,_1,_0.36,_1)] [@media_(prefers-reduced-motion:_reduce)]:[transition:none] pill-nav__line--bottom top-[7px]";
+const PANEL =
+  "pill-nav__panel absolute top-0 right-0 left-0 z-[1] p-[calc(var(--pn-h)_+_10px)_6px_6px] rounded-[24px] [box-sizing:border-box]";
+const MENU = "pill-nav__menu flex flex-col gap-0.5 m-0 p-0 list-none";
+const ROW =
+  "pill-nav__row focus-visible:[outline:2px_solid_var(--pn-ring)] focus-visible:[outline-offset:-2px] flex items-center gap-2.5 w-full h-[calc(var(--pn-h)_+_2px)] p-[0_16px] [border:0] rounded-[18px] [box-sizing:border-box] [background:none] [color:var(--pn-strong)] [font-family:inherit] [font-size:calc(var(--pn-font)_+_1px)] leading-[1] font-medium text-left no-underline cursor-pointer [outline:none] [transition:background-color_0.2s_ease] [&_svg]:w-[1.15em] [&_svg]:h-[1.15em] [&_svg]:flex-[none] hover:[background:var(--pn-row-hover)] [&[aria-current]]:[background:var(--pn-pill)] [&[aria-current]]:[box-shadow:var(--pn-pill-shadow)] [&[aria-current]]:[color:var(--pn-pill-ink)] [@media_(prefers-reduced-motion:_reduce)]:[transition:none]";
+const MEASURE =
+  "pill-nav__measure absolute top-0 left-0 flex gap-0.5 [visibility:hidden] pointer-events-none";
 
 const DEFAULT_ITEMS: PillNavItem[] = [
   { label: "Home", href: "#" },
