@@ -28,14 +28,12 @@ export function RootDocument({
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <head>
+      <body>
         <script
           defer
           src="https://stats.coreytaz.ru/tracker.js"
           data-site-id="f3899769-8e7f-4b85-85d5-93b895482380"
         />
-      </head>
-      <body>
         <script dangerouslySetInnerHTML={{ __html: motionInitScript }} />
         <script
           dangerouslySetInnerHTML={{
