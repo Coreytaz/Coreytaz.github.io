@@ -73,52 +73,52 @@ test("forced colors keeps the native pointer", async ({ page }) => {
   await expect(page.locator(".custom-cursor")).toBeHidden();
 });
 
-test("CSS cursor modes preserve their native meaning", async ({
-  page,
-  isMobile,
-}) => {
-  test.skip(isMobile, "Mouse-only cursor modes");
-  await page.goto("/");
-  // Wait for hydration and the cursor's event handlers before adding a fixture
-  // outside React's tree: hydration recovery can otherwise remove it.
-  await expect
-    .poll(async () => {
-      await page.mouse.move(420, 260);
-      await page.mouse.move(421, 260);
-      return page.locator("html").getAttribute("data-custom-cursor");
-    })
-    .toBe("on");
-  await page.evaluate(() => {
-    const target = document.createElement("div");
-    target.id = "cursor-mode-test";
-    target.style.cssText =
-      "position:fixed;top:180px;left:30px;width:150px;height:60px;z-index:500;background:white";
-    document.body.append(target);
-  });
-  const target = page.locator("#cursor-mode-test");
-  for (const mode of [
-    "text",
-    "vertical-text",
-    "grab",
-    "grabbing",
-    "move",
-    "ew-resize",
-    "ns-resize",
-    "nesw-resize",
-    "nwse-resize",
-    "wait",
-    "progress",
-    "not-allowed",
-    "help",
-    "crosshair",
-    "zoom-in",
-    "zoom-out",
-    "copy",
-    "alias",
-    "none",
-    "pointer",
-    "default",
-  ]) {
+// Give each mode its own timeout and trace instead of sharing one 30s budget.
+for (const mode of [
+  "text",
+  "vertical-text",
+  "grab",
+  "grabbing",
+  "move",
+  "ew-resize",
+  "ns-resize",
+  "nesw-resize",
+  "nwse-resize",
+  "wait",
+  "progress",
+  "not-allowed",
+  "help",
+  "crosshair",
+  "zoom-in",
+  "zoom-out",
+  "copy",
+  "alias",
+  "none",
+  "pointer",
+  "default",
+]) {
+  test(`CSS cursor mode "${mode}" preserves its native meaning`, async ({
+    page,
+    isMobile,
+  }) => {
+    test.skip(isMobile, "Mouse-only cursor modes");
+    await page.goto("/");
+    // Wait until the custom cursor handles real pointer events.
+    await expect
+      .poll(async () => {
+        await page.mouse.move(420, 260);
+        await page.mouse.move(421, 260);
+        return page.locator("html").getAttribute("data-custom-cursor");
+      })
+      .toBe("on");
+    await page.evaluate(() => {
+      const target = document.createElement("div");
+      target.id = "cursor-mode-test";
+      target.style.cssText =
+        "position:fixed;top:180px;left:30px;width:150px;height:60px;z-index:500;background:white";
+      document.body.append(target);
+    });
+    const target = page.locator("#cursor-mode-test");
     await target.evaluate((el, cursor) => {
       el.style.cursor = cursor;
     }, mode);
@@ -141,5 +141,5 @@ test("CSS cursor modes preserve their native meaning", async ({
       await expect(target).toHaveCSS("cursor", mode);
       await expect(page.locator(".cursor-arrow")).toBeHidden();
     }
-  }
-});
+  });
+}
