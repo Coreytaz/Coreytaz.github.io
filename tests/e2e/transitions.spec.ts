@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 
 // Windows can disable native smooth scrolling independently of CSS.
 test.use({ launchOptions: { args: ["--enable-smooth-scrolling"] } });

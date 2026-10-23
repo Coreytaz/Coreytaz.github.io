@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 
 test("contact destinations and magnetic CTA remain usable", async ({
   page,

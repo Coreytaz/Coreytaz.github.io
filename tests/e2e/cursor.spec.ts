@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 
 test("custom cursor replaces the mouse pointer and reacts to controls", async ({
   page,

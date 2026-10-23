@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 import sharp from "sharp";
 
 test("language switches without reload, clipped words, or overlapping translations", async ({

@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 
 test("hero artwork tilts with the mouse and resets when motion is off", async ({
   page,

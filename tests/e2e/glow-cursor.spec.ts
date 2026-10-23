@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 
 for (const fallback of [false, true]) {
   test(`glow renders with reduced system motion using ${fallback ? "canvas fallback" : "WebGL"}`, async ({

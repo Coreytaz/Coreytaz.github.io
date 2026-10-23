@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 
 test("React Bits effects follow the pointer and stop with global motion", async ({
   page,
