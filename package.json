@@ -19,6 +19,7 @@
     "preview": "node scripts/serve.mjs",
     "test:e2e": "playwright test",
     "test": "npm run test:unit && npm run test:e2e",
+    "verify": "npm run check && npm run build && npm run test:e2e",
     "check": "npm run content:check && npm run lint && npm run typecheck && npm run test:unit",
     "audit": "npm audit --omit=dev",
     "lighthouse": "node scripts/lighthouse.mjs",
