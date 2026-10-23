@@ -85,7 +85,7 @@ test.describe("section navigation", () => {
         await page.goto(locale === "ru" ? "/" : "/en/");
         if (!enabled) await page.locator(".motion-button").click();
         await page.evaluate(() => {
-          window.navigationScroll = [];
+          window.navigationScroll = [scrollY];
           addEventListener("scroll", () =>
             window.navigationScroll.push(scrollY),
           );
@@ -105,13 +105,18 @@ test.describe("section navigation", () => {
               ),
           )
           .toBeLessThan(2);
-        const { starts, positions } = await page.evaluate(() => ({
+        const { starts, positions, scrollEnd } = await page.evaluate(() => ({
           starts: window.transitionProbe.starts,
           positions: window.navigationScroll,
+          scrollEnd: scrollY,
         }));
         expect(starts).toBe(0);
         if (enabled) {
-          expect(positions.length).toBeGreaterThan(3);
+          // CI can coalesce scroll events. Require an intermediate position
+          // rather than a machine-dependent number of rendered frames.
+          expect(
+            positions.some((y) => y > positions[0]! && y < scrollEnd),
+          ).toBe(true);
           expect(
             positions.every((y, index) => !index || y >= positions[index - 1]!),
           ).toBe(true);

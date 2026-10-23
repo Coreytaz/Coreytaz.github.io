@@ -12,6 +12,7 @@ test("language switches without reload, clipped words, or overlapping translatio
     pageBackground: string;
     timelines: number;
     filter: string;
+    oldDisplay: string;
   }[] = [];
   await page.exposeFunction(
     "recordLanguageCircle",
@@ -27,6 +28,19 @@ test("language switches without reload, clipped words, or overlapping translatio
       void transition.ready
         .then(() => {
           const root = document.documentElement;
+          // Freeze a real intermediate frame while the transition exists.
+          // Reading pseudo styles after a round trip can observe its cleanup.
+          if (root.dataset.viewTransition === "language") {
+            for (const animation of document.getAnimations()) {
+              if (
+                (animation.effect as KeyframeEffect | null)?.pseudoElement ===
+                "::view-transition-new(portfolio-page)"
+              ) {
+                animation.pause();
+                animation.currentTime = 80;
+              }
+            }
+          }
           const style = getComputedStyle(
             root,
             "::view-transition-new(portfolio-page)",
@@ -49,6 +63,10 @@ test("language switches without reload, clipped words, or overlapping translatio
                   "::view-transition-new(portfolio-page)",
               ).length,
             filter: style.filter,
+            oldDisplay: getComputedStyle(
+              root,
+              "::view-transition-old(portfolio-page)",
+            ).display,
           });
         })
         .catch(() => {});
@@ -79,16 +97,8 @@ test("language switches without reload, clipped words, or overlapping translatio
     )
     .toBe(true);
   // Transparent snapshots let both translations show through at the same time.
-  expect(
-    await page.evaluate(
-      () =>
-        getComputedStyle(
-          document.documentElement,
-          "::view-transition-old(portfolio-page)",
-        ).display,
-    ),
-  ).toBe("none");
   const languageReveal = reveals.find((r) => r.mode === "language")!;
+  expect(languageReveal.oldDisplay).toBe("none");
   expect(languageReveal.background).toBe(languageReveal.pageBackground);
   expect(languageReveal.background).not.toBe("rgba(0, 0, 0, 0)");
   expect(languageReveal.timelines).toBe(1);

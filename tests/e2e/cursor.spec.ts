@@ -79,6 +79,15 @@ test("CSS cursor modes preserve their native meaning", async ({
 }) => {
   test.skip(isMobile, "Mouse-only cursor modes");
   await page.goto("/");
+  // Wait for hydration and the cursor's event handlers before adding a fixture
+  // outside React's tree: hydration recovery can otherwise remove it.
+  await expect
+    .poll(async () => {
+      await page.mouse.move(420, 260);
+      await page.mouse.move(421, 260);
+      return page.locator("html").getAttribute("data-custom-cursor");
+    })
+    .toBe("on");
   await page.evaluate(() => {
     const target = document.createElement("div");
     target.id = "cursor-mode-test";
