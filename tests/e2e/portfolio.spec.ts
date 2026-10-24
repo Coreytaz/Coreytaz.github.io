@@ -103,7 +103,27 @@ test("both homepages contain real content, localized SEO, and accessible navigat
     await page.goto(url);
     await expect(page.locator("html")).toHaveAttribute("lang", lang);
     await expect(page.locator("h1")).toBeVisible();
-    await expect(page.locator(".work-grid > article")).toHaveCount(3);
+    await expect(page.locator(".work-grid > article")).toHaveCount(18);
+    for (const [group, count] of [
+      ["react", 10],
+      ["markup", 3],
+      ["javascript", 1],
+      ["backend", 4],
+    ] as const) {
+      await expect(page.locator(`#work-${group} .project-card`)).toHaveCount(
+        count,
+      );
+      await expect(page.locator(`#work-${group}-title`)).toHaveText(
+        content.copy[lang][
+          {
+            react: "groupReact",
+            markup: "groupMarkup",
+            javascript: "groupJavascript",
+            backend: "groupBackend",
+          }[group]
+        ],
+      );
+    }
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
       `https://coreytaz.github.io${url}`,
@@ -237,7 +257,7 @@ test("404 is branded and drafts never enter the static artifact", async ({
     /noindex/,
   );
   const sitemap = await (await request.get("/sitemap.xml")).text();
-  expect((sitemap.match(/<loc>/g) ?? []).length).toBe(8);
+  expect((sitemap.match(/<loc>/g) ?? []).length).toBe(38);
   const files = (directory: string): string[] =>
     readdirSync(directory, { withFileTypes: true }).flatMap((entry) =>
       entry.isDirectory()
@@ -254,12 +274,29 @@ test("404 is branded and drafts never enter the static artifact", async ({
     expect(exportedText).not.toContain(draft.slug);
     expect(sitemap).not.toContain(draft.slug);
   }
-  for (const anchor of await page
-    .locator('a[href^="http"]')
-    .evaluateAll((anchors) =>
-      anchors.map((anchor) => anchor.getAttribute("href")),
-    ))
-    expect(anchor).not.toMatch(
-      /\.github\.io\/(pizza|legalide|golden|cart-react)/,
-    );
+});
+
+test("project cards expose supplied demos or repositories and local previews", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/");
+  for (const project of content.projects.filter(
+    (item: { status: string }) => item.status === "published",
+  )) {
+    const card = page.locator(`#work-${project.group} .project-card`).filter({
+      has: page.getByRole("heading", { name: project.title, exact: true }),
+    });
+    const destination = project.demoUrl ?? project.repositories[0].url;
+    await expect(card.locator(`a[href="${destination}"]`)).toHaveCount(1);
+    expect((await request.get(project.image)).status()).toBe(200);
+  }
+  await page.goto("/projects/visitgram/");
+  await expect(
+    page.getByRole("link", { name: "Исходный код", exact: true }).first(),
+  ).toHaveAttribute("href", "https://github.com/Coreytaz/visitgram");
+  await expect(
+    page.getByRole("link", { name: "Открыть демо", exact: true }),
+  ).toHaveCount(0);
+  await expect(page.locator(".case-preview img")).toBeVisible();
 });

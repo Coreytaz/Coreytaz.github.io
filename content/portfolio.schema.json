@@ -250,6 +250,10 @@
               "retry",
               "experienceTitle",
               "allProjects",
+              "groupReact",
+              "groupMarkup",
+              "groupJavascript",
+              "groupBackend",
               "stripTitle",
               "motionEnable",
               "motionDisable"
@@ -316,6 +320,10 @@
             "retry",
             "experienceTitle",
             "allProjects",
+            "groupReact",
+            "groupMarkup",
+            "groupJavascript",
+            "groupBackend",
             "stripTitle",
             "motionEnable",
             "motionDisable"
@@ -382,6 +390,10 @@
               "retry",
               "experienceTitle",
               "allProjects",
+              "groupReact",
+              "groupMarkup",
+              "groupJavascript",
+              "groupBackend",
               "stripTitle",
               "motionEnable",
               "motionDisable"
@@ -448,6 +460,10 @@
             "retry",
             "experienceTitle",
             "allProjects",
+            "groupReact",
+            "groupMarkup",
+            "groupJavascript",
+            "groupBackend",
             "stripTitle",
             "motionEnable",
             "motionDisable"
@@ -641,6 +657,15 @@
           "featured": {
             "type": "boolean"
           },
+          "group": {
+            "type": "string",
+            "enum": [
+              "react",
+              "markup",
+              "javascript",
+              "backend"
+            ]
+          },
           "category": {
             "type": "object",
             "properties": {
@@ -824,6 +849,7 @@
           "status",
           "order",
           "featured",
+          "group",
           "category",
           "summary",
           "overview",

@@ -78,6 +78,10 @@ export const copyKeys = [
   "retry",
   "experienceTitle",
   "allProjects",
+  "groupReact",
+  "groupMarkup",
+  "groupJavascript",
+  "groupBackend",
   "stripTitle",
   "motionEnable",
   "motionDisable",
@@ -92,6 +96,7 @@ export const projectSchema = z
     status: z.enum(["draft", "published"]),
     order: z.number().int().nonnegative(),
     featured: z.boolean(),
+    group: z.enum(["react", "markup", "javascript", "backend"]),
     category: localized,
     summary: localized,
     overview: localized,
@@ -181,28 +186,31 @@ export const portfolioSchema = z
         });
       slugs.add(project.slug);
       if (project.status === "published") {
-        if (!project.demoUrl) {
+        if (!project.demoUrl && project.repositories.length === 0) {
           ctx.addIssue({
             code: "custom",
             path: ["projects", index, "demoUrl"],
-            message: "Published projects need an external demo URL",
+            message: "Published projects need a demo URL or source repository",
           });
-        } else {
+        } else if (project.demoUrl) {
           if (!URL.canParse(project.demoUrl)) return;
           const url = new URL(project.demoUrl);
-          const ownOrigin = URL.canParse(content.site.baseUrl)
-            ? new URL(content.site.baseUrl).origin
+          const ownUrl = URL.canParse(content.site.baseUrl)
+            ? new URL(content.site.baseUrl)
             : null;
           if (
-            url.hostname === "github.io" ||
-            url.hostname.endsWith(".github.io") ||
-            url.origin === ownOrigin ||
+            (url.origin === ownUrl?.origin &&
+              (url.pathname === "/" ||
+                url.pathname === "/en/" ||
+                /^\/(en\/)?projects(?:\/|$)/.test(url.pathname))) ||
+            ["github.com", "www.github.com"].includes(url.hostname) ||
             ["localhost", "127.0.0.1", "[::1]"].includes(url.hostname)
           ) {
             ctx.addIssue({
               code: "custom",
               path: ["projects", index, "demoUrl"],
-              message: "Demo must be external and hosted outside GitHub Pages",
+              message:
+                "Use a project demo, not the portfolio, a GitHub repository, or localhost",
             });
           }
           const key = project.demoUrl.replace(/\/$/, "");

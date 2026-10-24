@@ -53,14 +53,14 @@
       "github": "GitHub",
       "scroll": "Листайте — дальше интереснее",
       "indexLabel": "ПОРТФОЛИО",
-      "workEyebrow": "01 / ИЗБРАННЫЕ РАБОТЫ",
+      "workEyebrow": "01 / ПРОЕКТЫ",
       "workTitle": "От идеи до интерфейса.",
-      "workIntro": "Три проекта. Разные задачи. Один подход — внимание к тому, как всё работает.",
+      "workIntro": "React-приложения, вёрстка, JavaScript и серверные проекты — от интерфейсов до автоматизации.",
       "caseStudy": "Разбор проекта",
       "liveDemo": "Открыть демо",
       "source": "Исходный код",
       "backend": "Серверная часть",
-      "projectCount": "проекта в фокусе",
+      "projectCount": "проектов в портфолио",
       "aboutEyebrow": "02 / ЗА ИНТЕРФЕЙСОМ",
       "aboutTitle": "Код — это только начало.",
       "aboutNote": "React, TypeScript и интерес к тому, что под капотом.",
@@ -94,7 +94,11 @@
       "allProjects": "Другие проекты",
       "stripTitle": "Технологии",
       "motionEnable": "Включить анимации",
-      "motionDisable": "Выключить анимации"
+      "motionDisable": "Выключить анимации",
+      "groupReact": "React / Next.js",
+      "groupMarkup": "Вёрстка · HTML / CSS",
+      "groupJavascript": "JavaScript · без React",
+      "groupBackend": "Боты / Backend"
     },
     "en": {
       "skip": "Skip to content",
@@ -114,14 +118,14 @@
       "github": "GitHub",
       "scroll": "Scroll to explore",
       "indexLabel": "PORTFOLIO",
-      "workEyebrow": "01 / SELECTED WORK",
+      "workEyebrow": "01 / PROJECTS",
       "workTitle": "From idea to interface.",
-      "workIntro": "Three projects. Different challenges. A shared focus on how things work.",
+      "workIntro": "React applications, web layouts, JavaScript, and backend projects — from interfaces to automation.",
       "caseStudy": "Explore the project",
       "liveDemo": "View live demo",
       "source": "Source code",
       "backend": "Backend",
-      "projectCount": "projects in focus",
+      "projectCount": "projects in the portfolio",
       "aboutEyebrow": "02 / BEHIND THE INTERFACE",
       "aboutTitle": "Code is just the beginning.",
       "aboutNote": "React, TypeScript, and curiosity about what happens underneath.",
@@ -155,7 +159,11 @@
       "allProjects": "More projects",
       "stripTitle": "Technologies",
       "motionEnable": "Enable animations",
-      "motionDisable": "Disable animations"
+      "motionDisable": "Disable animations",
+      "groupReact": "React / Next.js",
+      "groupMarkup": "Web layouts · HTML / CSS",
+      "groupJavascript": "JavaScript · without React",
+      "groupBackend": "Bots / Backend"
     }
   },
   "skills": [
@@ -209,24 +217,32 @@
     {
       "slug": "pizza-time",
       "title": "Pizza Time",
-      "status": "draft",
+      "status": "published",
       "order": 10,
       "featured": false,
       "category": {
-        "ru": "Веб-интерфейс",
-        "en": "Web interface"
+        "ru": "Лендинг пиццерии",
+        "en": "Pizzeria landing page"
       },
       "summary": {
-        "ru": "Проект из предыдущей версии портфолио.",
-        "en": "A project from the previous portfolio."
+        "ru": "Лендинг пиццерии с меню, категориями и выбором размера пиццы.",
+        "en": "A pizzeria landing page with a menu, categories, and pizza sizes."
       },
       "overview": {
-        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
-        "en": "Archived until its external demo and description are updated."
+        "ru": "Промосайт Pizza Time: первый экран, меню с фильтрами, информация о пиццерии и контакты. Интерфейс написан на HTML, CSS и JavaScript с jQuery.",
+        "en": "The Pizza Time promotional site includes a hero, a filterable menu, company information, and contacts. Built with HTML, CSS, JavaScript, and jQuery."
       },
       "features": {
-        "ru": [],
-        "en": []
+        "ru": [
+          "Меню с категориями пиццы.",
+          "Выбор размера и просмотр цены.",
+          "Разделы о пиццерии и контактах."
+        ],
+        "en": [
+          "Pizza menu with categories.",
+          "Size selection and prices.",
+          "About and contact sections."
+        ]
       },
       "decisions": {
         "ru": [],
@@ -235,40 +251,47 @@
       "technologies": ["HTML", "CSS", "JavaScript", "jQuery"],
       "image": "/images/projects/pizza-time.webp",
       "imageAlt": {
-        "ru": "Интерфейс Pizza Time",
+        "ru": "Интерфейс проекта Pizza Time",
         "en": "Pizza Time interface"
       },
       "accent": "blue",
-      "demoUrl": null,
+      "demoUrl": "https://coreytaz.github.io/pizza/",
       "repositories": [
         {
-          "label": "Frontend",
+          "label": "GitHub",
           "url": "https://github.com/Coreytaz/pizza"
         }
       ],
-      "imageSource": "assets/pizza.png"
+      "imageSource": "assets/pizza-time.webp",
+      "group": "markup"
     },
     {
       "slug": "golden-property",
       "title": "Golden Property Solution",
-      "status": "draft",
+      "status": "published",
       "order": 11,
       "featured": false,
       "category": {
-        "ru": "Веб-интерфейс",
-        "en": "Web interface"
+        "ru": "Лендинг недвижимости",
+        "en": "Real estate landing page"
       },
       "summary": {
-        "ru": "Проект из предыдущей версии портфолио.",
-        "en": "A project from the previous portfolio."
+        "ru": "Промосайт недвижимости в Дубае с объектами и формой консультации.",
+        "en": "A Dubai real estate landing page with properties and a consultation form."
       },
       "overview": {
-        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
-        "en": "Archived until its external demo and description are updated."
+        "ru": "Лендинг Golden Property Solution представляет недвижимость в Дубае, преимущества компании и объекты. Вёрстка выполнена на HTML и CSS, интерактивные элементы — на JavaScript.",
+        "en": "Golden Property Solution presents Dubai real estate, company benefits, and properties. HTML and CSS provide the layout, with JavaScript for interactions."
       },
       "features": {
-        "ru": [],
-        "en": []
+        "ru": [
+          "Первый экран с формой консультации.",
+          "Блоки преимуществ и объектов недвижимости."
+        ],
+        "en": [
+          "Hero with a consultation form.",
+          "Company benefits and property sections."
+        ]
       },
       "decisions": {
         "ru": [],
@@ -277,35 +300,44 @@
       "technologies": ["HTML", "CSS", "JavaScript", "Gulp"],
       "image": "/images/projects/golden-property.webp",
       "imageAlt": {
-        "ru": "Интерфейс Golden Property Solution",
+        "ru": "Интерфейс проекта Golden Property Solution",
         "en": "Golden Property Solution interface"
       },
       "accent": "blue",
-      "demoUrl": null,
-      "repositories": [],
-      "imageSource": "assets/GoldenPropertySolution.png"
+      "demoUrl": "https://coreytaz.github.io/GoldenPropertySolution/",
+      "repositories": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Coreytaz/GoldenPropertySolution"
+        }
+      ],
+      "imageSource": "assets/golden-property.webp",
+      "group": "markup"
     },
     {
       "slug": "legalide",
       "title": "Legalide",
-      "status": "draft",
+      "status": "published",
       "order": 12,
       "featured": false,
       "category": {
-        "ru": "Веб-интерфейс",
-        "en": "Web interface"
+        "ru": "Корпоративный лендинг",
+        "en": "Corporate landing page"
       },
       "summary": {
-        "ru": "Проект из предыдущей версии портфолио.",
-        "en": "A project from the previous portfolio."
+        "ru": "Лендинг юридической компании: услуги, информация о компании и контакты.",
+        "en": "A law firm landing page with services, company information, and contacts."
       },
       "overview": {
-        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
-        "en": "Archived until its external demo and description are updated."
+        "ru": "Legalide — адаптивная вёрстка сайта юридической компании. На странице представлены направления практики, информация о компании и контактный блок. Проект использует HTML, CSS и JavaScript.",
+        "en": "Legalide is a responsive law firm website. It presents practice areas, company information, and contacts, using HTML, CSS, and JavaScript."
       },
       "features": {
-        "ru": [],
-        "en": []
+        "ru": [
+          "Первый экран и направления юридической практики.",
+          "Адаптивная компоновка секций."
+        ],
+        "en": ["Hero and legal practice areas.", "Responsive section layouts."]
       },
       "decisions": {
         "ru": [],
@@ -314,166 +346,207 @@
       "technologies": ["HTML", "CSS", "JavaScript", "Gulp"],
       "image": "/images/projects/legalide.webp",
       "imageAlt": {
-        "ru": "Интерфейс Legalide",
+        "ru": "Интерфейс проекта Legalide",
         "en": "Legalide interface"
       },
       "accent": "blue",
-      "demoUrl": null,
+      "demoUrl": "https://coreytaz.github.io/Legalide/",
       "repositories": [
         {
-          "label": "Frontend",
+          "label": "GitHub",
           "url": "https://github.com/Coreytaz/Legalide"
         }
       ],
-      "imageSource": "assets/legalace.png"
+      "imageSource": "assets/legalide.webp",
+      "group": "markup"
     },
     {
       "slug": "react-cart",
       "title": "React Cart",
-      "status": "draft",
-      "order": 13,
+      "status": "published",
+      "order": 3,
       "featured": false,
       "category": {
-        "ru": "Веб-интерфейс",
-        "en": "Web interface"
+        "ru": "Корзина покупок",
+        "en": "Shopping cart"
       },
       "summary": {
-        "ru": "Проект из предыдущей версии портфолио.",
-        "en": "A project from the previous portfolio."
+        "ru": "Корзина на React с добавлением товаров, скидкой и расчётом стоимости.",
+        "en": "A React cart with product entry, discounts, and total calculation."
       },
       "overview": {
-        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
-        "en": "Archived until its external demo and description are updated."
+        "ru": "Учебное React-приложение для работы с состоянием корзины. Пользователь задаёт товар и цену, добавляет позиции и применяет скидку. Итог вычисляется на клиенте; состояние хранится в React.",
+        "en": "A React project exploring shopping cart state. Users enter products and prices, add items, and apply discounts. Totals are calculated on the client with state held in React."
       },
       "features": {
-        "ru": [],
-        "en": []
+        "ru": [
+          "Добавление и удаление товаров.",
+          "Подсчёт общей стоимости и скидки."
+        ],
+        "en": [
+          "Adding and removing products.",
+          "Total and discount calculation."
+        ]
       },
       "decisions": {
         "ru": [],
         "en": []
       },
-      "technologies": ["React", "CSS", "JavaScript", "MUI"],
+      "technologies": ["React", "TypeScript", "CSS", "Vite"],
       "image": "/images/projects/react-cart.webp",
       "imageAlt": {
-        "ru": "Интерфейс React Cart",
+        "ru": "Интерфейс проекта React Cart",
         "en": "React Cart interface"
       },
       "accent": "blue",
-      "demoUrl": null,
+      "demoUrl": "https://coreytaz.github.io/cart-react/",
       "repositories": [
         {
-          "label": "Frontend",
+          "label": "GitHub",
           "url": "https://github.com/Coreytaz/cart-react"
         }
       ],
-      "imageSource": "assets/React-cart .png"
+      "imageSource": "assets/react-cart.webp",
+      "group": "react"
     },
     {
       "slug": "react-repos",
       "title": "ReactRepos",
-      "status": "draft",
-      "order": 14,
+      "status": "published",
+      "order": 4,
       "featured": false,
       "category": {
-        "ru": "Веб-интерфейс",
-        "en": "Web interface"
+        "ru": "Поиск репозиториев",
+        "en": "Repository search"
       },
       "summary": {
-        "ru": "Проект из предыдущей версии портфолио.",
-        "en": "A project from the previous portfolio."
+        "ru": "Поиск публичных репозиториев через GitHub API с обработкой запросов и ошибок.",
+        "en": "Public repository search through the GitHub API with request and error handling."
       },
       "overview": {
-        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
-        "en": "Archived until its external demo and description are updated."
+        "ru": "ReactRepos помогает искать публичные репозитории GitHub. Интерфейс на React и TypeScript отправляет запросы через Axios, использует задержку ввода и отменяет устаревшие запросы.",
+        "en": "ReactRepos searches public GitHub repositories. Its React and TypeScript interface uses Axios, debounced input, and cancellation of outdated requests."
       },
       "features": {
-        "ru": [],
-        "en": []
+        "ru": [
+          "Поиск через GitHub Search API.",
+          "Задержка ввода, отмена запросов и обработка ошибок.",
+          "Адаптивные карточки результатов."
+        ],
+        "en": [
+          "GitHub Search API integration.",
+          "Debounced input, request cancellation, and error handling.",
+          "Responsive result cards."
+        ]
       },
       "decisions": {
         "ru": [],
         "en": []
       },
-      "technologies": ["React", "JavaScript", "Axios"],
+      "technologies": ["React", "TypeScript", "Axios", "Vite"],
       "image": "/images/projects/react-repos.webp",
       "imageAlt": {
-        "ru": "Интерфейс ReactRepos",
+        "ru": "Интерфейс проекта ReactRepos",
         "en": "ReactRepos interface"
       },
       "accent": "blue",
-      "demoUrl": null,
+      "demoUrl": "https://coreytaz.github.io/Search-repos-react/",
       "repositories": [
         {
-          "label": "Frontend",
+          "label": "GitHub",
           "url": "https://github.com/Coreytaz/Search-repos-react"
         }
       ],
-      "imageSource": "assets/ReactRepos.png"
+      "imageSource": "assets/react-repos.webp",
+      "group": "react"
     },
     {
       "slug": "bastion-group",
       "title": "BastionGroup",
-      "status": "draft",
-      "order": 15,
+      "status": "published",
+      "order": 5,
       "featured": false,
       "category": {
-        "ru": "Веб-интерфейс",
-        "en": "Web interface"
+        "ru": "Каталог продукции",
+        "en": "Product catalog"
       },
       "summary": {
-        "ru": "Проект из предыдущей версии портфолио.",
-        "en": "A project from the previous portfolio."
+        "ru": "Каталог опор трубопроводов на React с фильтрами, сортировкой и корзиной.",
+        "en": "A React pipe support catalog with filters, sorting, and a cart."
       },
       "overview": {
-        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
-        "en": "Archived until its external demo and description are updated."
+        "ru": "Bastion Group — витрина металлических изделий. Каталог поддерживает фильтры, сортировку и добавление товаров в корзину. Состояние управляется Redux Toolkit; оформление заказа демонстрационное и не отправляет данные на сервер.",
+        "en": "Bastion Group is a metal product storefront with filtering, sorting, and a cart. Redux Toolkit manages state. Checkout is a demonstration and does not submit orders to a server."
       },
       "features": {
-        "ru": [],
-        "en": []
+        "ru": [
+          "Фильтрация по цене и типу продукции.",
+          "Сортировка и корзина.",
+          "Демонстрационное оформление заказа."
+        ],
+        "en": [
+          "Price and product type filters.",
+          "Sorting and shopping cart.",
+          "Demonstration checkout."
+        ]
       },
       "decisions": {
         "ru": [],
         "en": []
       },
-      "technologies": ["React", "TypeScript", "Sass", "Redux", "React Router"],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Sass",
+        "Redux Toolkit",
+        "React Router",
+        "Vite"
+      ],
       "image": "/images/projects/bastion-group.webp",
       "imageAlt": {
-        "ru": "Интерфейс BastionGroup",
+        "ru": "Интерфейс проекта BastionGroup",
         "en": "BastionGroup interface"
       },
       "accent": "blue",
-      "demoUrl": null,
+      "demoUrl": "https://coreytaz.github.io/bastion-group/",
       "repositories": [
         {
-          "label": "Frontend",
+          "label": "GitHub",
           "url": "https://github.com/Coreytaz/bastion-group"
         }
       ],
-      "imageSource": "assets/bastion-group.png"
+      "imageSource": "assets/bastion-group.webp",
+      "group": "react"
     },
     {
       "slug": "elephant-um",
       "title": "Elephant-um",
-      "status": "draft",
-      "order": 16,
+      "status": "published",
+      "order": 6,
       "featured": false,
       "category": {
-        "ru": "Веб-интерфейс",
-        "en": "Web interface"
+        "ru": "Промосайт на React",
+        "en": "React promotional site"
       },
       "summary": {
-        "ru": "Проект из предыдущей версии портфолио.",
-        "en": "A project from the previous portfolio."
+        "ru": "Промосайт конкурса детского рисунка с адаптивными секциями и анимациями.",
+        "en": "A children's drawing competition site with responsive sections and animations."
       },
       "overview": {
-        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
-        "en": "Archived until its external demo and description are updated."
+        "ru": "СлонУМ — промосайт всероссийского конкурса детского рисунка. Сайт собирает условия участия, номинации и призы в адаптивном интерфейсе на React, TypeScript и Sass.",
+        "en": "Elephant-um promotes a national children's drawing competition. Entry details, categories, and prizes are presented in a responsive React, TypeScript, and Sass interface."
       },
       "features": {
-        "ru": [],
-        "en": []
+        "ru": [
+          "Информация о конкурсе, номинациях и призах.",
+          "Адаптивный интерфейс на React.",
+          "Переключение темы и анимаций."
+        ],
+        "en": [
+          "Competition details, categories, and prizes.",
+          "Responsive React interface.",
+          "Theme and animation controls."
+        ]
       },
       "decisions": {
         "ru": [],
@@ -482,40 +555,49 @@
       "technologies": ["React", "TypeScript", "Sass"],
       "image": "/images/projects/elephant-um.webp",
       "imageAlt": {
-        "ru": "Интерфейс Elephant-um",
+        "ru": "Интерфейс проекта Elephant-um",
         "en": "Elephant-um interface"
       },
       "accent": "blue",
-      "demoUrl": null,
+      "demoUrl": "https://coreytaz.github.io/elephant-um/",
       "repositories": [
         {
-          "label": "Frontend",
+          "label": "GitHub",
           "url": "https://github.com/Coreytaz/elephant-um"
         }
       ],
-      "imageSource": "assets/Elephant-um.png"
+      "imageSource": "assets/elephant-um.webp",
+      "group": "react"
     },
     {
       "slug": "react-pizza",
       "title": "React Pizza",
-      "status": "draft",
-      "order": 17,
+      "status": "published",
+      "order": 7,
       "featured": false,
       "category": {
-        "ru": "Веб-интерфейс",
-        "en": "Web interface"
+        "ru": "Интернет-магазин пиццы",
+        "en": "Pizza storefront"
       },
       "summary": {
-        "ru": "Проект из предыдущей версии портфолио.",
-        "en": "A project from the previous portfolio."
+        "ru": "Каталог пиццы на React: категории, поиск, выбор вариантов и корзина.",
+        "en": "A React pizza catalog with categories, search, product options, and a cart."
       },
       "overview": {
-        "ru": "Сохранён в архиве до обновления внешнего демо и описания.",
-        "en": "Archived until its external demo and description are updated."
+        "ru": "React Pizza — интерфейс заказа пиццы с каталогом, категориями и корзиной. Карточки позволяют выбрать размер и тип теста; приложение использует React, TypeScript, Redux и React Router.",
+        "en": "React Pizza is a pizza ordering interface with a catalog, categories, and a cart. Product cards offer size and dough options. Built with React, TypeScript, Redux, and React Router."
       },
       "features": {
-        "ru": [],
-        "en": []
+        "ru": [
+          "Каталог, поиск и категории пиццы.",
+          "Выбор размера и типа теста.",
+          "Добавление товаров в корзину."
+        ],
+        "en": [
+          "Pizza catalog, search, and categories.",
+          "Size and dough selection.",
+          "Adding products to a cart."
+        ]
       },
       "decisions": {
         "ru": [],
@@ -531,18 +613,19 @@
       ],
       "image": "/images/projects/react-pizza.webp",
       "imageAlt": {
-        "ru": "Интерфейс React Pizza",
+        "ru": "Интерфейс проекта React Pizza",
         "en": "React Pizza interface"
       },
       "accent": "blue",
-      "demoUrl": null,
+      "demoUrl": "https://coreytaz.github.io/ReactPizza/",
       "repositories": [
         {
-          "label": "Frontend",
+          "label": "GitHub",
           "url": "https://github.com/Coreytaz/ReactPizza"
         }
       ],
-      "imageSource": "assets/pizzaReact.png"
+      "imageSource": "assets/react-pizza.webp",
+      "group": "react"
     },
     {
       "slug": "react-chat",
@@ -597,11 +680,11 @@
       ],
       "image": "/images/projects/react-chat.webp",
       "imageAlt": {
-        "ru": "Интерфейс React Chat",
+        "ru": "Интерфейс проекта React Chat",
         "en": "React Chat interface"
       },
       "accent": "mint",
-      "demoUrl": "https://react-web-chat.vercel.app",
+      "demoUrl": "https://react-web-chat.vercel.app/",
       "repositories": [
         {
           "label": "Frontend",
@@ -612,7 +695,8 @@
           "url": "https://github.com/Coreytaz/React_Chat_Back"
         }
       ],
-      "imageSource": "assets/ReactChat.png"
+      "imageSource": "assets/react-chat.webp",
+      "group": "react"
     },
     {
       "slug": "spacex-ships",
@@ -666,18 +750,19 @@
       ],
       "image": "/images/projects/spacex-ships.webp",
       "imageAlt": {
-        "ru": "Интерфейс SpaceX Ships",
+        "ru": "Интерфейс проекта SpaceX Ships",
         "en": "SpaceX Ships interface"
       },
       "accent": "lilac",
-      "demoUrl": "https://graff-interactive-test.vercel.app",
+      "demoUrl": "https://spacex-ships-test.vercel.app/",
       "repositories": [
         {
           "label": "Frontend",
           "url": "https://github.com/Coreytaz/GraffInteractive-test"
         }
       ],
-      "imageSource": "assets/SpaceX Ships.png"
+      "imageSource": "assets/spacex-ships.webp",
+      "group": "react"
     },
     {
       "slug": "auto-repair",
@@ -722,7 +807,8 @@
       "accent": "blue",
       "demoUrl": null,
       "repositories": [],
-      "imageSource": "assets/autoRepairConsole.png"
+      "imageSource": "assets/autoRepairConsole.png",
+      "group": "react"
     },
     {
       "slug": "animbook",
@@ -777,11 +863,11 @@
       ],
       "image": "/images/projects/animbook.webp",
       "imageAlt": {
-        "ru": "Интерфейс AnimBook",
+        "ru": "Интерфейс проекта AnimBook",
         "en": "AnimBook interface"
       },
       "accent": "blue",
-      "demoUrl": "https://anim-book.vercel.app",
+      "demoUrl": "https://anim-book.vercel.app/",
       "repositories": [
         {
           "label": "Frontend",
@@ -792,7 +878,407 @@
           "url": "https://github.com/Coreytaz/AnimBook-server"
         }
       ],
-      "imageSource": "assets/AnimBook.png"
+      "imageSource": "assets/animbook.webp",
+      "group": "react"
+    },
+    {
+      "slug": "jsonplaceholder",
+      "title": "JSONPlaceholder Blog",
+      "group": "react",
+      "demoUrl": "https://jsonplaceholder-test-next.vercel.app/",
+      "category": {
+        "ru": "Блог на Next.js",
+        "en": "Next.js blog"
+      },
+      "summary": {
+        "ru": "Блог на Next.js с постами, авторами, пагинацией и формой создания записи.",
+        "en": "A Next.js blog with posts, authors, pagination, and a post creation form."
+      },
+      "overview": {
+        "ru": "Блог использует JSONPlaceholder API, Chakra UI и MobX. Список постов поддерживает пагинацию и выбор количества записей, а отдельная страница показывает пост и автора. Создание записи имитируется API и не сохраняет её на сервере.",
+        "en": "The blog uses the JSONPlaceholder API, Chakra UI, and MobX. The list supports pagination and page size selection, while detail pages show posts and authors. Post creation is simulated by the API and is not persisted."
+      },
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Chakra UI",
+        "MobX",
+        "Axios"
+      ],
+      "features": {
+        "ru": [
+          "Список постов и страницы авторов записей.",
+          "Пагинация и выбор количества записей.",
+          "Форма демонстрационного создания поста."
+        ],
+        "en": [
+          "Post list and author information.",
+          "Pagination and page size selection.",
+          "Demonstration post creation form."
+        ]
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "status": "published",
+      "featured": false,
+      "order": 8,
+      "image": "/images/projects/jsonplaceholder.webp",
+      "imageSource": "assets/jsonplaceholder.webp",
+      "imageAlt": {
+        "ru": "Интерфейс проекта JSONPlaceholder Blog",
+        "en": "JSONPlaceholder Blog interface"
+      },
+      "accent": "blue",
+      "repositories": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Coreytaz/jsonplaceholder-test"
+        }
+      ]
+    },
+    {
+      "slug": "greenatom-test-js",
+      "title": "Greenatom Gallery",
+      "group": "react",
+      "demoUrl": null,
+      "category": {
+        "ru": "Фотогалерея",
+        "en": "Photo gallery"
+      },
+      "summary": {
+        "ru": "Галерея на Next.js и MobX с альбомами, просмотром фотографий и Directus.",
+        "en": "A Next.js and MobX gallery with albums, photo viewing, and Directus."
+      },
+      "overview": {
+        "ru": "Галерея фотографий с альбомами, пагинацией и модальным просмотром снимков. Frontend использует Next.js, MobX и Tailwind CSS, а контент управляется через Directus. Проект запускается локально через Docker Compose; публичного демо нет.",
+        "en": "A photo gallery with albums, pagination, and modal image viewing. The frontend uses Next.js, MobX, and Tailwind CSS, with Directus managing content. Runs locally through Docker Compose; no public demo is available."
+      },
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "MobX",
+        "Tailwind CSS",
+        "Directus",
+        "Docker"
+      ],
+      "features": {
+        "ru": [
+          "Альбомы и постраничная навигация.",
+          "Модальное окно просмотра фотографий.",
+          "Управление контентом через Directus."
+        ],
+        "en": [
+          "Albums and pagination.",
+          "Modal photo viewer.",
+          "Content management through Directus."
+        ]
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "status": "published",
+      "featured": false,
+      "order": 9,
+      "image": "/images/projects/greenatom-test-js.webp",
+      "imageSource": "assets/greenatom-test-js.webp",
+      "imageAlt": {
+        "ru": "Интерфейс проекта Greenatom Gallery",
+        "en": "Greenatom Gallery interface"
+      },
+      "accent": "mint",
+      "repositories": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Coreytaz/greenatom-test-js"
+        }
+      ]
+    },
+    {
+      "slug": "search-by-ip",
+      "title": "IP Address Tracker",
+      "group": "javascript",
+      "demoUrl": "https://search-by-ip.vercel.app/",
+      "category": {
+        "ru": "Карта и внешний API",
+        "en": "Map and external API"
+      },
+      "summary": {
+        "ru": "Поиск IP-адреса с геолокацией, данными провайдера и картой Leaflet.",
+        "en": "IP address lookup with geolocation, provider information, and a Leaflet map."
+      },
+      "overview": {
+        "ru": "Приложение определяет местоположение по IP-адресу и показывает результат на карте Leaflet. Рядом отображаются адрес, часовой пояс и провайдер. Логика написана на TypeScript без React.",
+        "en": "The app looks up an IP address and displays its location on a Leaflet map, alongside timezone and provider details. Built with TypeScript without React."
+      },
+      "technologies": ["TypeScript", "JavaScript", "HTML", "CSS", "Leaflet"],
+      "features": {
+        "ru": [
+          "Ввод и проверка IP-адреса.",
+          "Местоположение, часовой пояс и провайдер.",
+          "Интерактивная карта Leaflet."
+        ],
+        "en": [
+          "IP address input and validation.",
+          "Location, timezone, and provider details.",
+          "Interactive Leaflet map."
+        ]
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "status": "published",
+      "featured": false,
+      "order": 13,
+      "image": "/images/projects/search-by-ip.webp",
+      "imageSource": "assets/search-by-ip.webp",
+      "imageAlt": {
+        "ru": "Интерфейс проекта IP Address Tracker",
+        "en": "IP Address Tracker interface"
+      },
+      "accent": "lilac",
+      "repositories": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Coreytaz/searchByIP"
+        }
+      ]
+    },
+    {
+      "slug": "visitgram",
+      "title": "Visitgram",
+      "group": "backend",
+      "demoUrl": null,
+      "category": {
+        "ru": "Веб-аналитика и Telegram",
+        "en": "Web analytics and Telegram"
+      },
+      "summary": {
+        "ru": "Аналитика посещений сайтов с уведомлениями и управлением через Telegram.",
+        "en": "Website visitor analytics with Telegram notifications and management."
+      },
+      "overview": {
+        "ru": "Visitgram — сервис аналитики для самостоятельного размещения. Скрипт на сайте отправляет события в Node.js, данные сохраняются через Drizzle ORM, а уведомления и управление доступны в Telegram. Поддерживаются несколько сайтов и разные базы данных; отдельной веб-панели нет.",
+        "en": "Visitgram is a self-hosted analytics service. A website script sends events to Node.js, Drizzle ORM stores data, and Telegram provides notifications and management. Supports multiple sites and database engines, with no separate web dashboard."
+      },
+      "technologies": [
+        "Node.js",
+        "TypeScript",
+        "grammY",
+        "Drizzle ORM",
+        "SQLite",
+        "PostgreSQL"
+      ],
+      "features": {
+        "ru": [
+          "Учёт посещений нескольких сайтов.",
+          "Уведомления и управление через Telegram.",
+          "Поддержка нескольких движков баз данных."
+        ],
+        "en": [
+          "Visitor tracking across multiple sites.",
+          "Telegram notifications and management.",
+          "Support for multiple database engines."
+        ]
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "status": "published",
+      "featured": false,
+      "order": 14,
+      "image": "/images/projects/visitgram.webp",
+      "imageSource": "assets/visitgram.webp",
+      "imageAlt": {
+        "ru": "Репозиторий проекта Visitgram на GitHub",
+        "en": "Visitgram repository on GitHub"
+      },
+      "accent": "blue",
+      "repositories": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Coreytaz/visitgram"
+        }
+      ]
+    },
+    {
+      "slug": "agro-bot",
+      "title": "Agro Bot",
+      "group": "backend",
+      "demoUrl": null,
+      "category": {
+        "ru": "Telegram-бот",
+        "en": "Telegram bot"
+      },
+      "summary": {
+        "ru": "Telegram-бот на TypeScript с меню, загрузкой фотографий и рассылками.",
+        "en": "A TypeScript Telegram bot with menus, photo uploads, and broadcasts."
+      },
+      "overview": {
+        "ru": "Бот на grammY и Express с командами, inline-меню, настройками языка и административными сценариями. В исходниках есть загрузка фотографий, работа с пользователями и рассылками по расписанию. Анализ фотографий представлен демонстрационной заготовкой.",
+        "en": "A grammY and Express bot with commands, inline menus, language settings, and administrative flows. The source includes photo uploads, user management, and scheduled broadcasts. Photo analysis is a demonstration placeholder."
+      },
+      "technologies": [
+        "Node.js",
+        "TypeScript",
+        "grammY",
+        "Express",
+        "Drizzle ORM",
+        "Cron"
+      ],
+      "features": {
+        "ru": [
+          "Команды, inline-меню и настройки языка.",
+          "Загрузка фотографий.",
+          "Администрирование и рассылки по расписанию."
+        ],
+        "en": [
+          "Commands, inline menus, and language settings.",
+          "Photo uploads.",
+          "Administration and scheduled broadcasts."
+        ]
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "status": "published",
+      "featured": false,
+      "order": 15,
+      "image": "/images/projects/agro-bot.webp",
+      "imageSource": "assets/agro-bot.webp",
+      "imageAlt": {
+        "ru": "Репозиторий проекта Agro Bot на GitHub",
+        "en": "Agro Bot repository on GitHub"
+      },
+      "accent": "mint",
+      "repositories": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Coreytaz/agro_bot"
+        }
+      ]
+    },
+    {
+      "slug": "cs2-gsi-tg",
+      "title": "CS2 GSI → Telegram",
+      "group": "backend",
+      "demoUrl": null,
+      "category": {
+        "ru": "Игровые события и Telegram",
+        "en": "Game events and Telegram"
+      },
+      "summary": {
+        "ru": "Уведомления о событиях Counter-Strike 2 в Telegram через Game State Integration.",
+        "en": "Counter-Strike 2 event notifications in Telegram through Game State Integration."
+      },
+      "overview": {
+        "ru": "Node.js-сервис принимает события Game State Integration из Counter-Strike 2 и отправляет сообщения в Telegram. Обработчики реагируют на начало и завершение игры, исход раунда и события бомбы.",
+        "en": "A Node.js service receives Counter-Strike 2 Game State Integration events and sends Telegram notifications. Handlers cover match start and end, round outcomes, and bomb events."
+      },
+      "technologies": [
+        "Node.js",
+        "JavaScript",
+        "grammY",
+        "Game State Integration"
+      ],
+      "features": {
+        "ru": [
+          "Приём игровых событий через GSI.",
+          "Уведомления о раундах, счёте и событиях бомбы.",
+          "Отправка сообщений нескольким получателям."
+        ],
+        "en": [
+          "Receiving game events through GSI.",
+          "Round, score, and bomb event notifications.",
+          "Messages to multiple recipients."
+        ]
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "status": "published",
+      "featured": false,
+      "order": 16,
+      "image": "/images/projects/cs2-gsi-tg.webp",
+      "imageSource": "assets/cs2-gsi-tg.webp",
+      "imageAlt": {
+        "ru": "Репозиторий проекта CS2 GSI → Telegram на GitHub",
+        "en": "CS2 GSI → Telegram repository on GitHub"
+      },
+      "accent": "lilac",
+      "repositories": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Coreytaz/cs2-gsi-tg"
+        }
+      ]
+    },
+    {
+      "slug": "ads-notification-cian",
+      "title": "Циан: уведомления",
+      "group": "backend",
+      "demoUrl": null,
+      "category": {
+        "ru": "Мониторинг объявлений",
+        "en": "Listing monitoring"
+      },
+      "summary": {
+        "ru": "Мониторинг объявлений Циан по расписанию с уведомлениями в Telegram.",
+        "en": "Scheduled monitoring of Cian listings with Telegram notifications."
+      },
+      "overview": {
+        "ru": "Сервис на Node.js и TypeScript проверяет объявления через Puppeteer и отправляет уведомления в Telegram. В боте доступны списки наблюдения, категории и подписки; расписание проверок задаётся через Cron.",
+        "en": "A Node.js and TypeScript service checks listings with Puppeteer and sends Telegram notifications. The bot provides watchlists, categories, and subscriptions, with Cron scheduling checks."
+      },
+      "technologies": [
+        "Node.js",
+        "TypeScript",
+        "Puppeteer",
+        "grammY",
+        "Express",
+        "Drizzle ORM",
+        "Cron"
+      ],
+      "features": {
+        "ru": [
+          "Проверка объявлений и ссылок по расписанию.",
+          "Списки наблюдения, категории и подписки.",
+          "Уведомления через Telegram."
+        ],
+        "en": [
+          "Scheduled listing and link checks.",
+          "Watchlists, categories, and subscriptions.",
+          "Telegram notifications."
+        ]
+      },
+      "decisions": {
+        "ru": [],
+        "en": []
+      },
+      "status": "published",
+      "featured": false,
+      "order": 17,
+      "image": "/images/projects/ads-notification-cian.webp",
+      "imageSource": "assets/ads-notification-cian.webp",
+      "imageAlt": {
+        "ru": "Репозиторий проекта Циан: уведомления на GitHub",
+        "en": "Циан: уведомления repository on GitHub"
+      },
+      "accent": "blue",
+      "repositories": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Coreytaz/ads-notification-cian"
+        }
+      ]
     }
   ],
   "additionalTechnologies": [

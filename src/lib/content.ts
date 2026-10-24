@@ -34,9 +34,12 @@ for (const project of portfolio.projects.filter(
 export const publishedProjects = portfolio.projects
   .filter((project) => project.status === "published")
   .sort((a, b) => a.order - b.order);
-export const featuredProjects = publishedProjects.filter(
-  (project) => project.featured,
-);
+export const projectGroups = [
+  { id: "react", label: "groupReact" },
+  { id: "markup", label: "groupMarkup" },
+  { id: "javascript", label: "groupJavascript" },
+  { id: "backend", label: "groupBackend" },
+] as const;
 export const homePath = (locale: Locale) => (locale === "ru" ? "/" : "/en/");
 export const projectPath = (locale: Locale, slug: string) =>
   `${homePath(locale)}projects/${slug}/`;

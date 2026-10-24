@@ -21,7 +21,7 @@ export function ProjectCard({
   const copy = portfolio.copy[locale];
   return (
     <article
-      className={String.raw`project-card [&.project-showcase]:[border:1px_solid_var(--border)] [&.project-showcase]:rounded-[20px] [&.project-showcase]:overflow-hidden [&.project-showcase]:[background:var(--card)] [&.project-showcase]:flex [&.project-showcase]:flex-col print:[&.project-showcase]:grid print:[&.project-showcase]:grid-cols-[1fr_1fr] print:[&.project-showcase]:[border:0] print:[&.project-showcase]:rounded-none min-w-[0] print:grid print:grid-cols-[1fr_1fr] print:gap-6 print:mb-5.5 print:[break-inside:avoid] project-showcase [&_.project-spotlight]:rounded-none [&_.project-visual]:min-h-85 [&_.project-visual]:p-[66px_28px_50px] [&_.project-visual]:rounded-none [&_.project-visual]:[background:linear-gradient(_140deg,_color-mix(in_srgb,_var(--project-tint)_70%,_var(--background)),_var(--project-tint)_)] [&.project-card-featured_.project-visual]:min-h-[455px] [&.project-card-featured_.project-visual]:h-full [&.project-card-featured_.project-visual]:p-[74px_30px_65px] [&_.project-visual_.browser-frame]:[transform:none] [&_.project-visual_.browser-frame]:[transition:none] [&_.project-visual_.browser-frame]:[border:1px_solid_color-mix(in_srgb,_var(--foreground)_12%,_transparent)] [&_.project-visual_.browser-frame]:rounded-[10px] [&_.project-visual_.browser-frame]:h-full [&_.project-visual_.browser-frame]:[background:var(--background)] [&_.project-visual_.browser-frame]:[box-shadow:0_15px_35px_#00000018] [&_.browser-toolbar]:[background:var(--muted)] [&_.browser-toolbar]:text-muted-foreground [&_.browser-toolbar]:h-6.5 [&_.browser-toolbar]:px-3 [&_.browser-toolbar]:[border-bottom:1px_solid_var(--border)] [&_.browser-address]:[font-size:8px] [&_.project-description]:p-[27px_28px_28px] [&_.project-description]:flex [&_.project-description]:flex-col [&_.project-description]:flex-[1] [&.project-card-featured_.project-description]:p-[35px] [&.project-card-featured_.project-description]:justify-center [&_.project-actions]:mt-auto [&_.project-actions]:pt-5.5 [&_.project-actions]:gap-2.5 [&_.project-actions_a]:inline-flex [&_.project-actions_a]:justify-center [&_.project-actions_a]:items-center [&_.project-actions_a]:gap-[9px] [&_.project-actions_a]:min-h-[39px] [&_.project-actions_a]:p-[10px_14px] [&_.project-actions_a]:[border:1px_solid_var(--border)] [&_.project-actions_a]:rounded-[9px] [&_.project-actions_a]:[font-size:11px] [&_.project-actions_a:first-child]:[background:var(--primary)] [&_.project-actions_a:first-child]:[border-color:transparent] [&_.project-actions_a:first-child]:text-primary-foreground [&_.project-actions_a:hover]:[box-shadow:0_0_0_3px_color-mix(in_srgb,_var(--primary)_12%,_transparent)] [&_.project-heading_h3]:[font-size:25px] [&.project-card-featured_.project-heading_h3]:[font-size:34px] max-[800.01px]:[&_.project-visual]:min-h-[0] max-[800.01px]:[&_.project-visual]:p-[60px_20px_45px] max-[800.01px]:[&.project-card-featured_.project-visual]:min-h-[0] max-[800.01px]:[&.project-card-featured_.project-visual]:p-[60px_20px_45px] max-[800.01px]:[&_.project-description]:p-6 max-[800.01px]:[&.project-card-featured_.project-description]:p-6 max-[800.01px]:[&.project-card-featured_.project-heading_h3]:[font-size:28px] max-[800.01px]:[&_.browser-address]:[font-size:7px] print:[&_.project-description]:p-0 print:[&.project-card-featured_.project-description]:p-0 ${large ? "project-card-featured [&.project-showcase]:grid [&.project-showcase]:grid-cols-[1.35fr_1fr] [&.project-showcase]:items-stretch [&.project-showcase]:gap-0 max-[800.01px]:[&.project-showcase]:flex col-[1_/_-1] grid grid-cols-[1.55fr_1fr] gap-10 items-center [&_.project-visual]:min-h-95 [&_.project-visual]:p-[78px_36px_62px] [&_.project-description]:p-[0_8px_0_0] [&_h3]:[font-size:36px] max-[1100.01px]:gap-7.5 max-[1100.01px]:[&_.project-visual]:min-h-82.5 max-[1100.01px]:[&_.project-visual]:px-[25px] max-[800.01px]:block max-[800.01px]:[&_.project-description]:p-[24px_0_0] max-[800.01px]:[&_h3]:[font-size:28px] max-[800.01px]:[&_.project-visual]:min-h-80 max-[800.01px]:[&_.project-visual]:p-[70px_35px_50px] max-[480.01px]:col-auto max-[480.01px]:[&_.project-visual]:min-h-[265px] max-[480.01px]:[&_.project-visual]:p-[65px_25px_43px] max-[480.01px]:[&_h3]:[font-size:28px] print:grid print:grid-cols-[1fr_1fr] print:gap-6 print:mb-5.5 print:[break-inside:avoid] print:[&_.project-visual]:min-h-[0] print:[&_.project-visual]:p-[28px_15px_22px] print:[&_.project-visual]:[print-color-adjust:exact] print:[&_.project-description]:p-0 print:[&_h3]:[font-size:19pt]" : ""}`}
+      className={String.raw`project-card [&.project-showcase]:[border:1px_solid_var(--border)] [&.project-showcase]:rounded-[20px] [&.project-showcase]:overflow-hidden [&.project-showcase]:[background:var(--card)] [&.project-showcase]:flex [&.project-showcase]:flex-col print:[&.project-showcase]:grid print:[&.project-showcase]:grid-cols-[1fr_1fr] print:[&.project-showcase]:[border:0] print:[&.project-showcase]:rounded-none min-w-[0] print:grid print:grid-cols-[1fr_1fr] print:gap-6 print:mb-5.5 print:[break-inside:avoid] project-showcase [&_.project-spotlight]:rounded-none [&_.project-visual]:min-h-85 [&_.project-visual]:p-[66px_28px_50px] [&_.project-visual]:rounded-none [&_.project-visual]:[background:linear-gradient(_140deg,_color-mix(in_srgb,_var(--project-tint)_70%,_var(--background)),_var(--project-tint)_)] [&.project-card-featured_.project-visual]:min-h-[455px] [&.project-card-featured_.project-visual]:h-full [&.project-card-featured_.project-visual]:p-[74px_30px_65px] [&_.project-visual_.browser-frame]:[transform:none] [&_.project-visual_.browser-frame]:[transition:none] [&_.project-visual_.browser-frame]:[border:1px_solid_color-mix(in_srgb,_var(--foreground)_12%,_transparent)] [&_.project-visual_.browser-frame]:rounded-[10px] [&_.project-visual_.browser-frame]:h-full [&_.project-visual_.browser-frame]:[background:var(--background)] [&_.project-visual_.browser-frame]:[box-shadow:0_15px_35px_#00000018] [&_.browser-toolbar]:[background:var(--muted)] [&_.browser-toolbar]:text-muted-foreground [&_.browser-toolbar]:h-6.5 [&_.browser-toolbar]:px-3 [&_.browser-toolbar]:[border-bottom:1px_solid_var(--border)] [&_.browser-address]:[font-size:8px] [&_.project-description]:p-[27px_28px_28px] [&_.project-description]:flex [&_.project-description]:flex-col [&_.project-description]:flex-[1] [&.project-card-featured_.project-description]:p-[35px] [&.project-card-featured_.project-description]:justify-center [&_.project-actions]:mt-auto [&_.project-actions]:pt-5.5 [&_.project-actions]:gap-2.5 [&_.project-actions_a]:inline-flex [&_.project-actions_a]:justify-center [&_.project-actions_a]:items-center [&_.project-actions_a]:gap-[9px] [&_.project-actions_a]:min-h-[39px] [&_.project-actions_a]:p-[10px_14px] [&_.project-actions_a]:[border:1px_solid_var(--border)] [&_.project-actions_a]:rounded-[9px] [&_.project-actions_a]:[font-size:11px] [&_.project-actions_a:first-child]:[background:var(--primary)] [&_.project-actions_a:first-child]:[border-color:transparent] [&_.project-actions_a:first-child]:text-primary-foreground [&_.project-actions_a:hover]:[box-shadow:0_0_0_3px_color-mix(in_srgb,_var(--primary)_12%,_transparent)] [&_.project-heading_h4]:[font-size:25px] [&.project-card-featured_.project-heading_h4]:[font-size:34px] max-[800.01px]:[&_.project-visual]:min-h-[0] max-[800.01px]:[&_.project-visual]:p-[60px_20px_45px] max-[800.01px]:[&.project-card-featured_.project-visual]:min-h-[0] max-[800.01px]:[&.project-card-featured_.project-visual]:p-[60px_20px_45px] max-[800.01px]:[&_.project-description]:p-6 max-[800.01px]:[&.project-card-featured_.project-description]:p-6 max-[800.01px]:[&.project-card-featured_.project-heading_h4]:[font-size:28px] max-[800.01px]:[&_.browser-address]:[font-size:7px] print:[&_.project-description]:p-0 print:[&.project-card-featured_.project-description]:p-0 ${large ? "project-card-featured [&.project-showcase]:grid [&.project-showcase]:grid-cols-[1.35fr_1fr] [&.project-showcase]:items-stretch [&.project-showcase]:gap-0 max-[800.01px]:[&.project-showcase]:flex col-[1_/_-1] grid grid-cols-[1.55fr_1fr] gap-10 items-center [&_.project-visual]:min-h-95 [&_.project-visual]:p-[78px_36px_62px] [&_.project-description]:p-[0_8px_0_0] [&_h4]:[font-size:36px] max-[1100.01px]:gap-7.5 max-[1100.01px]:[&_.project-visual]:min-h-82.5 max-[1100.01px]:[&_.project-visual]:px-[25px] max-[800.01px]:block max-[800.01px]:[&_.project-description]:p-[24px_0_0] max-[800.01px]:[&_h4]:[font-size:28px] max-[800.01px]:[&_.project-visual]:min-h-80 max-[800.01px]:[&_.project-visual]:p-[70px_35px_50px] max-[480.01px]:col-auto max-[480.01px]:[&_.project-visual]:min-h-[265px] max-[480.01px]:[&_.project-visual]:p-[65px_25px_43px] max-[480.01px]:[&_h4]:[font-size:28px] print:grid print:grid-cols-[1fr_1fr] print:gap-6 print:mb-5.5 print:[break-inside:avoid] print:[&_.project-visual]:min-h-[0] print:[&_.project-visual]:p-[28px_15px_22px] print:[&_.project-visual]:[print-color-adjust:exact] print:[&_.project-description]:p-0 print:[&_h4]:[font-size:19pt]" : ""}`}
       data-accent={project.accent}
       data-reveal
     >
@@ -52,7 +52,7 @@ export function ProjectCard({
                 "project-number [font:9px_ui-monospace,_monospace] [color:#505c63] tracking-[0.025em] dark:[color:#c4ccd6] max-[800.01px]:[font-size:8px] max-[480.01px]:[font-size:9px]"
               }
             >
-              0{index + 1} / {project.category[locale]}
+              {String(index + 1).padStart(2, "0")} / {project.category[locale]}
             </span>
             <span
               className={
@@ -137,7 +137,7 @@ export function ProjectCard({
       >
         <div
           className={
-            "project-heading flex items-center justify-between gap-[15px] [&_h3]:[font-size:28px] [&_h3]:leading-[1.3] [&_h3]:[font-weight:650] [&_h3]:tracking-[-0.045em] [&_h3]:mt-[7px] max-[800.01px]:[&_h3]:[font-size:23px] max-[480.01px]:[&_h3]:[font-size:28px] print:[&_h3]:[font-size:19pt]"
+            "project-heading flex items-center justify-between gap-[15px] [&_h4]:[font-size:28px] [&_h4]:leading-[1.3] [&_h4]:[font-weight:650] [&_h4]:tracking-[-0.045em] [&_h4]:mt-[7px] max-[800.01px]:[&_h4]:[font-size:23px] max-[480.01px]:[&_h4]:[font-size:28px] print:[&_h4]:[font-size:19pt]"
           }
         >
           <div>
@@ -152,11 +152,11 @@ export function ProjectCard({
               name={`project-title-${project.slug}`}
               kind="project-title"
             >
-              <h3>
+              <h4>
                 <Link href={projectPath(locale, project.slug)}>
                   {project.title}
                 </Link>
-              </h3>
+              </h4>
             </MotionView>
           </div>
           <Link
@@ -213,6 +213,16 @@ export function ProjectCard({
           {project.demoUrl && (
             <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
               {copy.liveDemo}
+              <ArrowUpRight size={15} aria-hidden="true" />
+            </a>
+          )}
+          {!project.demoUrl && project.repositories[0] && (
+            <a
+              href={project.repositories[0].url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {copy.source}
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
           )}

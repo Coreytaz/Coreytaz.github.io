@@ -24,7 +24,7 @@ import StarBorder from "@/components/react-bits/StarBorder";
 import { HeroBackground } from "@/components/hero-background";
 import {
   portfolio,
-  featuredProjects,
+  projectGroups,
   publishedProjects,
   projectPath,
   buildYear,
@@ -201,7 +201,14 @@ export function HomePage({ locale }: { locale: Locale }) {
       icon: CodeXml,
     },
   ];
-  const nonFeatured = publishedProjects.filter((project) => !project.featured);
+  const groups = projectGroups
+    .map((group) => ({
+      ...group,
+      projects: publishedProjects.filter(
+        (project) => project.group === group.id,
+      ),
+    }))
+    .filter((group) => group.projects.length > 0);
   return (
     <SiteShell locale={locale}>
       <MotionView name="portfolio-page">
@@ -344,38 +351,56 @@ export function HomePage({ locale }: { locale: Locale }) {
                 {copy.workIntro}
               </p>
             </div>
-            <div
-              className={
-                "work-grid grid grid-cols-[1fr_1fr] gap-[48px_30px] max-[800.01px]:gap-[38px_22px] max-[480.01px]:grid-cols-[1fr] max-[480.01px]:gap-9.5 print:block"
-              }
+            <nav
+              aria-label={copy.navWork}
+              className="mb-10 flex flex-wrap gap-2 print:hidden"
             >
-              {featuredProjects.map((project, index) => (
-                <ProjectCard
-                  key={project.slug}
-                  project={project}
-                  locale={locale}
-                  index={index}
-                  large={index === 0}
-                />
+              {groups.map((group) => (
+                <a
+                  key={group.id}
+                  href={`#work-${group.id}`}
+                  className="inline-flex min-h-11 items-center gap-3 rounded-full border border-border px-4 py-2 text-xs transition-colors hover:border-primary hover:text-primary"
+                >
+                  {copy[group.label]}
+                  <span className="font-mono text-[10px] text-muted-foreground">
+                    {String(group.projects.length).padStart(2, "0")}
+                  </span>
+                </a>
               ))}
-            </div>
-            {nonFeatured.length > 0 && (
-              <div
-                className={
-                  "other-work grid grid-cols-[1fr_1fr] gap-7.5 mt-15 [&_>_h3]:col-[1_/_-1] [&_>_h3]:[font-size:24px] max-[480.01px]:grid-cols-[1fr]"
-                }
+            </nav>
+            {groups.map((group) => (
+              <section
+                key={group.id}
+                id={`work-${group.id}`}
+                aria-labelledby={`work-${group.id}-title`}
+                className="project-group mt-14 scroll-mt-28 first-of-type:mt-0"
               >
-                <h3>{copy.allProjects}</h3>
-                {nonFeatured.map((project, index) => (
-                  <ProjectCard
-                    key={project.slug}
-                    project={project}
-                    locale={locale}
-                    index={featuredProjects.length + index}
-                  />
-                ))}
-              </div>
-            )}
+                <div className="mb-7 flex items-center gap-4 border-b border-border pb-5">
+                  <h3
+                    id={`work-${group.id}-title`}
+                    className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl"
+                  >
+                    {copy[group.label]}
+                  </h3>
+                  <span className="font-mono text-xs text-muted-foreground">
+                    {String(group.projects.length).padStart(2, "0")}
+                  </span>
+                </div>
+                <div className="work-grid grid grid-cols-[1fr_1fr] gap-[48px_30px] max-[800.01px]:gap-[38px_22px] max-[480.01px]:grid-cols-[1fr] max-[480.01px]:gap-9.5 print:block">
+                  {group.projects.map((project, index) => (
+                    <ProjectCard
+                      key={project.slug}
+                      project={project}
+                      locale={locale}
+                      index={publishedProjects.indexOf(project)}
+                      large={
+                        group.id === "react" && index === 0 && project.featured
+                      }
+                    />
+                  ))}
+                </div>
+              </section>
+            ))}
             <div
               className={
                 "work-end flex items-center gap-2.5 mt-[45px] [font:10px_ui-monospace,_monospace] text-muted-foreground [&_.small-dot]:w-1 [&_.small-dot]:h-1 print:hidden"
@@ -387,7 +412,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                 }
               />
               <span>
-                {String(featuredProjects.length).padStart(2, "0")}{" "}
+                {String(publishedProjects.length).padStart(2, "0")}{" "}
                 {copy.projectCount}
               </span>
               <span

@@ -227,7 +227,10 @@ export function CasePage({
                 <span className="size-1.5 rounded-full bg-muted-foreground/40" />
                 <span className="size-1.5 rounded-full bg-muted-foreground/40" />
                 <span className="browser-address mx-auto truncate px-4 font-mono text-[10px]">
-                  {project.demoUrl && new URL(project.demoUrl).hostname}
+                  {project.demoUrl
+                    ? new URL(project.demoUrl).hostname
+                    : project.repositories[0] &&
+                      new URL(project.repositories[0].url).hostname}
                 </span>
                 <ArrowUpRight size={13} />
               </div>
