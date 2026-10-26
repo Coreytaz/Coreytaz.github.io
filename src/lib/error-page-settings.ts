@@ -3,6 +3,7 @@ import type { Locale, Portfolio } from "@/lib/content-schema";
 export const errorCopyKeys = [
   "skip",
   "navWork",
+  "navExperience",
   "navAbout",
   "navContact",
   "navMenu",

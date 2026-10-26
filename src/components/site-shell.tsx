@@ -36,6 +36,7 @@ export function SiteShell({
         name={portfolio.profile.name[locale]}
         labels={{
           work: copy.navWork,
+          experience: copy.navExperience,
           about: copy.navAbout,
           contact: copy.navContact,
           menu: copy.navMenu,

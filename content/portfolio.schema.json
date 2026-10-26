@@ -196,6 +196,7 @@
             "enum": [
               "skip",
               "navWork",
+              "navExperience",
               "navAbout",
               "navContact",
               "navMenu",
@@ -266,6 +267,7 @@
           "required": [
             "skip",
             "navWork",
+            "navExperience",
             "navAbout",
             "navContact",
             "navMenu",
@@ -336,6 +338,7 @@
             "enum": [
               "skip",
               "navWork",
+              "navExperience",
               "navAbout",
               "navContact",
               "navMenu",
@@ -406,6 +409,7 @@
           "required": [
             "skip",
             "navWork",
+            "navExperience",
             "navAbout",
             "navContact",
             "navMenu",
@@ -617,13 +621,47 @@
               "en"
             ],
             "additionalProperties": false
+          },
+          "highlights": {
+            "type": "object",
+            "properties": {
+              "ru": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "en": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "ru",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "technologies": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
           }
         },
         "required": [
           "company",
           "role",
           "period",
-          "description"
+          "description",
+          "highlights",
+          "technologies"
         ],
         "additionalProperties": false
       }

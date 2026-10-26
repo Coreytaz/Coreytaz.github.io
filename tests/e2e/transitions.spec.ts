@@ -97,7 +97,7 @@ test.describe("section navigation", () => {
         if (isMobile) await page.locator(".mobile-menu").click();
         await page
           .locator(isMobile ? ".sheet-nav a" : ".desktop-nav a")
-          .nth(1)
+          .filter({ hasText: locale === "ru" ? "Обо мне" : "About" })
           .click();
         await expect(page).toHaveURL(/#about$/);
         await expect

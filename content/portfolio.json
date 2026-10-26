@@ -98,7 +98,8 @@
       "groupReact": "React / Next.js",
       "groupMarkup": "Вёрстка · HTML / CSS",
       "groupJavascript": "JavaScript · без React",
-      "groupBackend": "Боты / Backend"
+      "groupBackend": "Боты / Backend",
+      "navExperience": "Опыт"
     },
     "en": {
       "skip": "Skip to content",
@@ -163,7 +164,8 @@
       "groupReact": "React / Next.js",
       "groupMarkup": "Web layouts · HTML / CSS",
       "groupJavascript": "JavaScript · without React",
-      "groupBackend": "Bots / Backend"
+      "groupBackend": "Bots / Backend",
+      "navExperience": "Experience"
     }
   },
   "skills": [
@@ -212,7 +214,81 @@
       "projects": ["animbook", "react-chat"]
     }
   ],
-  "experience": [],
+  "experience": [
+    {
+      "company": "Управление репутацией VICTORY",
+      "role": {
+        "ru": "Frontend-разработчик",
+        "en": "Frontend Developer"
+      },
+      "period": {
+        "ru": "Февраль 2025 — настоящее время",
+        "en": "February 2025 — Present"
+      },
+      "description": {
+        "ru": "Разработка корпоративных веб-приложений, административных панелей и внутренних систем автоматизации бизнес-процессов.",
+        "en": "Development of corporate web applications, admin panels, and internal business process automation systems."
+      },
+      "highlights": {
+        "ru": [
+          "Разработка CRM для внутренних отделов компании и интеграция IP-телефонии через JsSIP.",
+          "Создание универсальных таблиц на TanStack Table и TanStack Virtual: виртуализация, вложенные строки, закрепление колонок, сортировка и фильтрация.",
+          "Развитие корпоративных чатов и обработки обращений: сообщения, вложения и переключение каналов коммуникации.",
+          "Разработка переиспользуемых компонентов и сложных форм, управление состоянием через MobX и Zustand, интеграция REST API.",
+          "Работа с монорепозиторием Turborepo, анализ бандлов, разделение кода, оптимизация производительности и модульные тесты."
+        ],
+        "en": [
+          "Developed an internal CRM and integrated IP telephony using JsSIP.",
+          "Built reusable tables with TanStack Table and TanStack Virtual: virtualization, nested rows, pinned columns, sorting, and filtering.",
+          "Developed corporate chat and request handling interfaces with messages, attachments, and communication channel switching.",
+          "Built reusable components and complex forms, managed state with MobX and Zustand, and integrated REST APIs.",
+          "Worked in a Turborepo monorepo on bundle analysis, code splitting, performance optimization, and unit tests."
+        ]
+      },
+      "technologies": [
+        "React",
+        "TypeScript",
+        "MobX",
+        "Zustand",
+        "TanStack Table",
+        "TanStack Virtual",
+        "JsSIP",
+        "shadcn/ui",
+        "Radix UI",
+        "Turborepo"
+      ]
+    },
+    {
+      "company": "Digital Kontora",
+      "role": {
+        "ru": "Frontend-разработчик",
+        "en": "Frontend Developer"
+      },
+      "period": {
+        "ru": "Июнь 2023 — февраль 2025",
+        "en": "June 2023 — February 2025"
+      },
+      "description": {
+        "ru": "Командная разработка CRM-системы для действующего маркетплейса и развитие существующих веб-приложений.",
+        "en": "Team development of a CRM for an operating marketplace and maintenance of existing web applications."
+      },
+      "highlights": {
+        "ru": [
+          "Разработка модулей административной панели: таблиц, форм, фильтров, модальных окон и переиспользуемых компонентов.",
+          "Интеграция с backend через REST API, загрузка данных, обработка ошибок и управление состоянием интерфейса.",
+          "Адаптивная вёрстка по дизайн-макетам, улучшение пользовательского опыта и производительности интерфейсов.",
+          "Поддержка проектов, исправление ошибок, рефакторинг компонентов и написание модульных тестов."
+        ],
+        "en": [
+          "Developed admin panel modules: tables, forms, filters, modal dialogs, and reusable components.",
+          "Integrated backend services through REST APIs, including data loading, error handling, and UI state management.",
+          "Implemented responsive layouts from design mockups and improved user experience and interface performance.",
+          "Maintained projects, fixed bugs, refactored components, and wrote unit tests."
+        ]
+      },
+      "technologies": ["React", "JavaScript", "TypeScript", "REST API", "Git"]
+    }
+  ],
   "projects": [
     {
       "slug": "pizza-time",

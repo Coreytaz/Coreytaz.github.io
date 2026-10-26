@@ -24,6 +24,7 @@ const image = z
 export const copyKeys = [
   "skip",
   "navWork",
+  "navExperience",
   "navAbout",
   "navContact",
   "navMenu",
@@ -168,6 +169,8 @@ export const portfolioSchema = z
           role: localized,
           period: localized,
           description: localized,
+          highlights: localizedList,
+          technologies: z.array(text).min(1),
         })
         .strict(),
     ),

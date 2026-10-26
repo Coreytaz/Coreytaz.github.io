@@ -59,6 +59,7 @@ export function ErrorPage({
         alternateHref={`${alternate}${status === 404 ? "page-not-found/" : "500/"}`}
         labels={{
           work: copy.navWork,
+          experience: copy.navExperience,
           about: copy.navAbout,
           contact: copy.navContact,
           menu: copy.navMenu,

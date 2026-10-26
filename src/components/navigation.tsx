@@ -23,6 +23,7 @@ import {
 
 type Labels = {
   work: string;
+  experience: string;
   about: string;
   contact: string;
   menu: string;
@@ -61,6 +62,7 @@ export function Navigation({
   const motion = useMotion();
   const links = [
     { href: `${homeHref}#work`, label: labels.work },
+    { href: `${homeHref}#experience`, label: labels.experience },
     { href: `${homeHref}#about`, label: labels.about },
     { href: `${homeHref}#contact`, label: labels.contact },
   ];
@@ -311,7 +313,7 @@ export function Navigation({
         </div>
       </div>
       <noscript>
-        <nav className={"noscript-nav flex p-4 gap-5 justify-center"}>
+        <nav className={"noscript-nav flex flex-wrap p-4 gap-5 justify-center"}>
           {links.map((link) => (
             <a key={link.href} href={link.href}>
               {link.label}

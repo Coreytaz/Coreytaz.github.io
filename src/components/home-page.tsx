@@ -13,6 +13,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ProjectCard } from "@/components/project-card";
 import { SiteShell } from "@/components/site-shell";
+import { ExperienceSection } from "@/components/experience-section";
 import { TechnologyStrip } from "@/components/technology-strip";
 import { MotionView } from "@/components/motion-view";
 import TiltedCard, {
@@ -422,6 +423,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               />
             </div>
           </section>
+          <ExperienceSection locale={locale} />
           <section
             className={
               "about-section [background:var(--muted)] print:[background:white] section-space py-28 max-[800.01px]:py-18 print:py-7"
@@ -724,31 +726,6 @@ export function HomePage({ locale }: { locale: Locale }) {
                   );
                 })}
               </div>
-              {portfolio.experience.length > 0 && (
-                <section
-                  className={
-                    "experience-section mt-[65px] [&_h3]:[font-size:25px] [&_h3]:mb-5 [&_article]:p-[24px_0] [&_article]:[border-top:1px_solid_var(--border)] [&_h4]:my-2.5 [&_article_>_p]:[font-size:14px] [&_article_>_p]:leading-[1.7] [&_article_>_p]:text-muted-foreground"
-                  }
-                  aria-labelledby="experience-title"
-                >
-                  <h3 id="experience-title">{copy.experienceTitle}</h3>
-                  {portfolio.experience.map((item) => (
-                    <article key={`${item.company}-${item.period[locale]}`}>
-                      <span
-                        className={
-                          "eyebrow [font-family:ui-monospace,_'Cascadia_Code',_monospace] [font-size:11px] font-medium tracking-[0.1em] leading-[1.6] uppercase text-muted-foreground"
-                        }
-                      >
-                        {item.period[locale]}
-                      </span>
-                      <h4>
-                        {item.role[locale]} · {item.company}
-                      </h4>
-                      <p>{item.description[locale]}</p>
-                    </article>
-                  ))}
-                </section>
-              )}
             </div>
           </section>
           <section
